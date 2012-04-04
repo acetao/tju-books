@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 配置数据源信息 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/tjubooks">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1931lou"></property>
+	</bean>
+	
+	<!-- 注册并配置链接工厂 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+		  <list>
+		    <value>tjubooks/po/Book.hbm.xml</value>
+		    <value>tjubooks/po/Category.hbm.xml</value>
+		    <value>tjubooks/po/User.hbm.xml</value>
+		  </list>
+		</property>
+	</bean>
+	
+	<!-- 注册Dao层数据访问对象，并将SessionFactory进行注入  -->
+	<bean id="bookDao" class="tjubooks.dao.impl.BookDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="categoryDao" class="tjubooks.dao.impl.CategoryDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+		<bean id="userDao" class="tjubooks.dao.impl.UserDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<!-- 注册Biz业务逻辑层的类对象，并将Dao数据访问层对象进行注入 -->
+	<bean id="bookBiz" class="tjubooks.biz.impl.BookBiz"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="bookDao">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	<bean id="userBiz" class="tjubooks.biz.impl.UserBiz"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="userDao">
+			<ref bean="userDao"/>
+		</property>
+	</bean>
+	
+	
+	<!-- 注册Action控制器层的动作类对象，并将biz业务逻辑层对象进行注入-->	
+	<bean id="bookAction" class="tjubooks.action.BookAction" abstract="false"
+		scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+		<bean id="UserAction" class="tjubooks.action.UserAction" abstract="false"
+		scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>
+</beans>

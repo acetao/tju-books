@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 配置Struts中的Action动作类全部由Spring框架托管 -->
+	<constant name="objectFactory" value="spring"></constant>
+	<!-- 配置Struts中的参数传递乱码解决方案 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- Struts中的action程序包 -->
+	<package name="actions" extends="struts-default" namespace="/">
+		<!-- Interceptor监听器 的注册-->
+		<!-- Action动作类的注册 -->
+		<action name="book" class="bookAction">
+		  <result>/book/SearchBook.jsp</result>
+		  <result name="searchSuccess">/book/SearchBook.jsp</result>
+		</action>	
+	</package>
+</struts>    
