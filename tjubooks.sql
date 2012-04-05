@@ -14,20 +14,45 @@
 # ------------------------------------------------------
 # Server version 5.5.21
 
-DROP DATABASE IF EXISTS `tjubooks2`;
-CREATE DATABASE `tjubooks2` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `tjubooks2`;
+DROP DATABASE IF EXISTS `tjubooks`;
+CREATE DATABASE `tjubooks` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `tjubooks`;
 
 #
-# Source for table books
+# Source for table attentbook
 #
 
-DROP TABLE IF EXISTS `books`;
-CREATE TABLE `books` (
+DROP TABLE IF EXISTS `attentbook`;
+CREATE TABLE `attentbook` (
+  `attentionId` int(11) NOT NULL,
+  `bookid` int(11) DEFAULT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `attentionTime` date DEFAULT NULL,
+  PRIMARY KEY (`attentionId`),
+  KEY `FK_attentionUser` (`userid`),
+  KEY `FK_bookAttented` (`bookid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Dumping data for table attentbook
+#
+LOCK TABLES `attentbook` WRITE;
+/*!40000 ALTER TABLE `attentbook` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `attentbook` ENABLE KEYS */;
+UNLOCK TABLES;
+
+#
+# Source for table book
+#
+
+DROP TABLE IF EXISTS `book`;
+CREATE TABLE `book` (
   `bookid` int(11) NOT NULL AUTO_INCREMENT,
   `categoryid` int(11) DEFAULT NULL,
   `userid` int(11) DEFAULT NULL,
   `bookname` varchar(50) DEFAULT NULL,
+  `image` mediumblob,
   `author` varchar(100) DEFAULT NULL,
   `Publisher` varchar(50) DEFAULT NULL,
   `isbn` varchar(15) DEFAULT NULL,
@@ -39,17 +64,18 @@ CREATE TABLE `books` (
   `price` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`bookid`),
   KEY `FK_categoryRelation` (`categoryid`),
-  KEY `FK_sellRelation` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存放书籍的相关信息';
+  KEY `FK_sellRelation` (`userid`),
+  KEY `bookname` (`bookname`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='存放书籍的相关信息';
 
 #
-# Dumping data for table books
+# Dumping data for table book
 #
-LOCK TABLES `books` WRITE;
-/*!40000 ALTER TABLE `books` DISABLE KEYS */;
+LOCK TABLES `book` WRITE;
+/*!40000 ALTER TABLE `book` DISABLE KEYS */;
 
-INSERT INTO `books` VALUES (1,33751552,1,'算法导论',' [美] Thomas H.Cormen / Charles E.Leiserson / Ronald L.Rivest / Clifford Stein','机械工业出版社','9787111187776','学妹优惠哦！','这本书深入浅出，全面地介绍了计算机算法。对每一个算法的分析既易于理解又十分有趣，并保持了数学严谨性。本书的设计目标全面，适用于多种用途。涵盖的内容有：算法在计算中的作用，概率分析和随机算法的介绍。书中专门讨论了线性规划，介绍了动态规划的两个应用，随机化和线性规划技术的近似算法等，还有有关递归求解、快速排序中用到的划分方法与期望线性时间顺序统计算法，以及对贪心算法元素的讨论。此书还介绍了对强连通子图算法正确性的证明，对哈密顿回路和子集求和问题的NP完全性的证明等内容。全书提供了900多个练习题和思考题以及叙述较为详细的实例研究。','2012-03-21','2013-12-30','上架中','10元，可议价');
-/*!40000 ALTER TABLE `books` ENABLE KEYS */;
+INSERT INTO `book` VALUES (1,33751552,1,'算法设计',NULL,'田飞鹏','Bird 出版社','9787111187773','',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
 #
@@ -62,7 +88,7 @@ CREATE TABLE `category` (
   `cname` varchar(40) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
   PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存储有关分类的信息，分类的定义最多为四级，用一个32位的整数来存储，每8位存储一级分类，按从高位到低位的顺序，1-8位为';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存储有关分类的信息，分类的定义最多为四级，用一个32位的整数来存储，每8位存储一级分类，按从高位到低位的顺序，整数的1-';
 
 #
 # Dumping data for table category
@@ -159,24 +185,44 @@ INSERT INTO `category` VALUES (50593792,'雅思',2);
 INSERT INTO `category` VALUES (50659328,'GRE',2);
 INSERT INTO `category` VALUES (50724864,'商务英语',2);
 INSERT INTO `category` VALUES (50790400,'专业认证考试',2);
-INSERT INTO `category` VALUES (50855936,'其他',2);
-INSERT INTO `category` VALUES (67108864,'课外读物类',1);
-INSERT INTO `category` VALUES (67174400,'文学历史哲学',2);
-INSERT INTO `category` VALUES (67239936,'社科经管励志心理',2);
-INSERT INTO `category` VALUES (67305472,'杂志漫画',2);
-INSERT INTO `category` VALUES (67371008,'其他',2);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 #
-# Source for table users
+# Source for table requestbook
 #
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `requestbook`;
+CREATE TABLE `requestbook` (
+  `requestId` int(11) NOT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `reqBookName` varchar(50) DEFAULT NULL,
+  `reqBookIntroduce` varchar(1000) DEFAULT NULL,
+  `reqDate` date DEFAULT NULL,
+  `hasResponse` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`requestId`),
+  KEY `FK_reqBookUserRelation` (`userid`),
+  KEY `reqBookName` (`reqBookName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Dumping data for table requestbook
+#
+LOCK TABLES `requestbook` WRITE;
+/*!40000 ALTER TABLE `requestbook` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `requestbook` ENABLE KEYS */;
+UNLOCK TABLES;
+
+#
+# Source for table user
+#
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
   `userid` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL DEFAULT '0',
+  `password` varchar(20) DEFAULT NULL,
   `gender` char(2) DEFAULT NULL,
   `college` varchar(30) DEFAULT NULL,
   `marjor` varchar(30) DEFAULT NULL,
@@ -185,26 +231,42 @@ CREATE TABLE `users` (
   `qq` varchar(20) DEFAULT NULL,
   `cellphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`userid`),
-  UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存储用户的信息';
+  UNIQUE KEY `username` (`username`),
+  KEY `AK_username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='users'' imformation';
 
 #
-# Dumping data for table users
+# Dumping data for table user
 #
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
 
-INSERT INTO `users` VALUES (1,'flybirdtian@163.com','123456','男','软件学院','软件工程','2009级','flybirdtian@163.com','1061903350','13821178532');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+INSERT INTO `user` VALUES (1,'flybirdtian','123456','男','软件学院','软件工程','2009级','flybirdtian@163.com','1061903350','13821178532');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 #
-#  Foreign keys for table books
+#  Foreign keys for table attentbook
 #
 
-ALTER TABLE `books`
-ADD CONSTRAINT `FK_sellRelation` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
-ADD CONSTRAINT `FK_categoryRelation` FOREIGN KEY (`categoryid`) REFERENCES `category` (`categoryid`);
+ALTER TABLE `attentbook`
+ADD CONSTRAINT `FK_attentionUser` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`),
+ADD CONSTRAINT `FK_bookAttented` FOREIGN KEY (`bookid`) REFERENCES `book` (`bookid`);
+
+#
+#  Foreign keys for table book
+#
+
+ALTER TABLE `book`
+ADD CONSTRAINT `FK_categoryRelation` FOREIGN KEY (`categoryid`) REFERENCES `category` (`categoryid`),
+ADD CONSTRAINT `FK_sellRelation` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`);
+
+#
+#  Foreign keys for table requestbook
+#
+
+ALTER TABLE `requestbook`
+ADD CONSTRAINT `FK_reqBookUserRelation` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`);
 
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
