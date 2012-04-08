@@ -3,6 +3,7 @@ package tjubooks.po;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.sql.Blob;
 
 /**
  * Book entity. @author MyEclipse Persistence Tools
@@ -16,7 +17,7 @@ public class Book implements java.io.Serializable {
 	private Category category;
 	private User user;
 	private String bookname;
-	private String image;
+	private Blob image;
 	private String author;
 	private String publisher;
 	private String isbn;
@@ -35,7 +36,7 @@ public class Book implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Book(Category category, User user, String bookname, String image,
+	public Book(Category category, User user, String bookname, Blob image,
 			String author, String publisher, String isbn,
 			String specialStatement, String introduction, Date publishdate,
 			Date unlinedate, String state, String price, Set attentbooks) {
@@ -89,11 +90,11 @@ public class Book implements java.io.Serializable {
 		this.bookname = bookname;
 	}
 
-	public String getImage() {
+	public Blob getImage() {
 		return this.image;
 	}
 
-	public void setImage(String image) {
+	public void setImage(Blob image) {
 		this.image = image;
 	}
 
