@@ -15,7 +15,7 @@
 			value="jdbc:mysql://localhost:3306/tjubooks">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="1931lou"></property>
+		<property name="password" value="123456"></property>
 	</bean>
 	
 	<!-- 注册并配置链接工厂 -->
