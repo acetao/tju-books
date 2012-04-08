@@ -19,7 +19,7 @@
         <property name="bookname" type="java.lang.String">
             <column name="bookname" length="50" />
         </property>
-        <property name="image" type="java.lang.String">
+        <property name="image" type="java.sql.Blob">
             <column name="image" />
         </property>
         <property name="author" type="java.lang.String">
