@@ -1,6 +1,8 @@
 package tjubooks.po;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Book entity. @author MyEclipse Persistence Tools
@@ -24,6 +26,7 @@ public class Book implements java.io.Serializable {
 	private Date unlinedate;
 	private String state;
 	private String price;
+	private Set attentbooks = new HashSet(0);
 
 	// Constructors
 
@@ -35,7 +38,7 @@ public class Book implements java.io.Serializable {
 	public Book(Category category, User user, String bookname, String image,
 			String author, String publisher, String isbn,
 			String specialStatement, String introduction, Date publishdate,
-			Date unlinedate, String state, String price) {
+			Date unlinedate, String state, String price, Set attentbooks) {
 		this.category = category;
 		this.user = user;
 		this.bookname = bookname;
@@ -49,6 +52,7 @@ public class Book implements java.io.Serializable {
 		this.unlinedate = unlinedate;
 		this.state = state;
 		this.price = price;
+		this.attentbooks = attentbooks;
 	}
 
 	// Property accessors
@@ -163,6 +167,14 @@ public class Book implements java.io.Serializable {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+
+	public Set getAttentbooks() {
+		return this.attentbooks;
+	}
+
+	public void setAttentbooks(Set attentbooks) {
+		this.attentbooks = attentbooks;
 	}
 
 }

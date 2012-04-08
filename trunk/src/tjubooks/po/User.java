@@ -22,6 +22,8 @@ public class User implements java.io.Serializable {
 	private String qq;
 	private String cellphone;
 	private Set books = new HashSet(0);
+	private Set requestbooks = new HashSet(0);
+	private Set attentbooks = new HashSet(0);
 
 	// Constructors
 
@@ -30,15 +32,15 @@ public class User implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public User(String username, String password) {
+	public User(String username) {
 		this.username = username;
-		this.password = password;
 	}
 
 	/** full constructor */
 	public User(String username, String password, String gender,
 			String college, String marjor, String grade, String email,
-			String qq, String cellphone, Set books) {
+			String qq, String cellphone, Set books, Set requestbooks,
+			Set attentbooks) {
 		this.username = username;
 		this.password = password;
 		this.gender = gender;
@@ -49,6 +51,8 @@ public class User implements java.io.Serializable {
 		this.qq = qq;
 		this.cellphone = cellphone;
 		this.books = books;
+		this.requestbooks = requestbooks;
+		this.attentbooks = attentbooks;
 	}
 
 	// Property accessors
@@ -139,6 +143,22 @@ public class User implements java.io.Serializable {
 
 	public void setBooks(Set books) {
 		this.books = books;
+	}
+
+	public Set getRequestbooks() {
+		return this.requestbooks;
+	}
+
+	public void setRequestbooks(Set requestbooks) {
+		this.requestbooks = requestbooks;
+	}
+
+	public Set getAttentbooks() {
+		return this.attentbooks;
+	}
+
+	public void setAttentbooks(Set attentbooks) {
+		this.attentbooks = attentbooks;
 	}
 
 }
