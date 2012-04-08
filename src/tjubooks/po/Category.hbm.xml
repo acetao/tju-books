@@ -8,7 +8,7 @@
     <class name="tjubooks.po.Category" table="category" catalog="tjubooks">
         <id name="categoryid" type="java.lang.Integer">
             <column name="categoryid" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
         <property name="cname" type="java.lang.String">
             <column name="cname" length="40" />

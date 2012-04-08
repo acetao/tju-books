@@ -34,8 +34,10 @@
 		</property>
 		<property name="mappingResources">
 		  <list>
+		    <value>tjubooks/po/Attentbook.hbm.xml</value>
 		    <value>tjubooks/po/Book.hbm.xml</value>
 		    <value>tjubooks/po/Category.hbm.xml</value>
+		    <value>tjubooks/po/Requestbook.hbm.xml</value>
 		    <value>tjubooks/po/User.hbm.xml</value>
 		  </list>
 		</property>
