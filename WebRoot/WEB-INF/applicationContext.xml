@@ -39,6 +39,7 @@
 		    <value>tjubooks/po/Category.hbm.xml</value>
 		    <value>tjubooks/po/Requestbook.hbm.xml</value>
 		    <value>tjubooks/po/User.hbm.xml</value>
+		    <value>tjubooks/po/Bookimage.hbm.xml</value>
 		  </list>
 		</property>
 	</bean>
@@ -58,7 +59,28 @@
 		</property>
 	</bean>
 	
-		<bean id="userDao" class="tjubooks.dao.impl.UserDao"
+	<bean id="userDao" class="tjubooks.dao.impl.UserDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="attentBookDao" class="tjubooks.dao.impl.AttentbookDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="requestBookDao" class="tjubooks.dao.impl.RequestbookDao"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="bookImageDao" class="tjubooks.dao.impl.BookimageDao"
 		abstract="false" lazy-init="default" autowire="default">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -80,6 +102,12 @@
 		</property>
 	</bean>
 	
+	<bean id="imageBiz" class="tjubooks.biz.impl.ImageBiz"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="bookImageDao">
+			<ref bean="bookImageDao"/>
+		</property>
+	</bean>
 	
 	<!-- 注册Action控制器层的动作类对象，并将biz业务逻辑层对象进行注入-->	
 	<bean id="bookAction" class="tjubooks.action.BookAction" abstract="false"
@@ -88,10 +116,18 @@
 			<ref bean="bookBiz" />
 		</property>
 	</bean>
-		<bean id="UserAction" class="tjubooks.action.UserAction" abstract="false"
+	
+	<bean id="userAction" class="tjubooks.action.UserAction" abstract="false"
 		scope="prototype" lazy-init="default" autowire="default">
 		<property name="userBiz">
 			<ref bean="userBiz" />
+		</property>
+	</bean>
+	
+	<bean id="imageAction" class="tjubooks.action.ImageAction" abstract="false"
+		scope="prototype" lazy-init="default" autowire="default">
+		<property name="imageBiz">
+			<ref bean="imageBiz" />
 		</property>
 	</bean>
 </beans>

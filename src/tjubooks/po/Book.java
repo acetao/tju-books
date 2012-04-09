@@ -3,7 +3,6 @@ package tjubooks.po;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.sql.Blob;
 
 /**
  * Book entity. @author MyEclipse Persistence Tools
@@ -14,10 +13,10 @@ public class Book implements java.io.Serializable {
 	// Fields
 
 	private Integer bookid;
+	private Bookimage bookimage;
 	private Category category;
 	private User user;
 	private String bookname;
-	private Blob image;
 	private String author;
 	private String publisher;
 	private String isbn;
@@ -36,14 +35,14 @@ public class Book implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Book(Category category, User user, String bookname, Blob image,
-			String author, String publisher, String isbn,
+	public Book(Bookimage bookimage, Category category, User user,
+			String bookname, String author, String publisher, String isbn,
 			String specialStatement, String introduction, Date publishdate,
 			Date unlinedate, String state, String price, Set attentbooks) {
+		this.bookimage = bookimage;
 		this.category = category;
 		this.user = user;
 		this.bookname = bookname;
-		this.image = image;
 		this.author = author;
 		this.publisher = publisher;
 		this.isbn = isbn;
@@ -64,6 +63,14 @@ public class Book implements java.io.Serializable {
 
 	public void setBookid(Integer bookid) {
 		this.bookid = bookid;
+	}
+
+	public Bookimage getBookimage() {
+		return this.bookimage;
+	}
+
+	public void setBookimage(Bookimage bookimage) {
+		this.bookimage = bookimage;
 	}
 
 	public Category getCategory() {
@@ -88,14 +95,6 @@ public class Book implements java.io.Serializable {
 
 	public void setBookname(String bookname) {
 		this.bookname = bookname;
-	}
-
-	public Blob getImage() {
-		return this.image;
-	}
-
-	public void setImage(Blob image) {
-		this.image = image;
 	}
 
 	public String getAuthor() {

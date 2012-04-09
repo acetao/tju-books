@@ -10,6 +10,9 @@
             <column name="bookid" />
             <generator class="native" />
         </id>
+        <many-to-one name="bookimage" class="tjubooks.po.Bookimage" fetch="select">
+            <column name="imageId" />
+        </many-to-one>
         <many-to-one name="category" class="tjubooks.po.Category" fetch="select">
             <column name="categoryid" />
         </many-to-one>
@@ -18,9 +21,6 @@
         </many-to-one>
         <property name="bookname" type="java.lang.String">
             <column name="bookname" length="50" />
-        </property>
-        <property name="image" type="java.sql.Blob">
-            <column name="image" />
         </property>
         <property name="author" type="java.lang.String">
             <column name="author" length="100" />

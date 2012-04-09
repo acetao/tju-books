@@ -3,7 +3,6 @@ package tjubooks.po;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * User entity. @author MyEclipse Persistence Tools
  */

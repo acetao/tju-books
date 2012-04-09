@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Sun Apr 08 15:20:53 CST 2012
+#Mon Apr 09 01:10:04 CST 2012
 sessionFactoryName=
 genBasicCompId=false
 profile=
@@ -18,7 +18,7 @@ genVersionTag=false
 sessionFactoryId=sessionFactory
 basePersistenceClass=
 genAnnotations=false
-reSettingsFile=
+reSettingsFile=/tju-books/hibernate.reveng.xml
 configFile=/TjuBooks/WebRoot/WEB-INF/applicationContext.xml
 createConfigFile=false
 addLibs2Classpath=true

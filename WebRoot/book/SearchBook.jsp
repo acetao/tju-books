@@ -27,7 +27,7 @@ body,td,th {
   </head>
   
   <body><!--
-  <c:if test="${empty requestScope.pageBean}">
+  <c:if test="${empty sessionScope.pageBean}">
     <script>location="${path}/book!byPage.action"</script>
   </c:if>
   -->
@@ -40,31 +40,35 @@ body,td,th {
       <input type="submit" name="searchButton" id="searchButton" value="搜索" />
     </p>
   </form>
-  <table width="600" border="0" cellspacing="0" cellpadding="0">
+  <table width="917" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td height="30" colspan="2">&nbsp;</td>
+      <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td align="right">&nbsp;</td>
     </tr>
     <tr>
-      <td height="30" colspan="2">总共${requestScope.pageBean.totalRows}条记录</td>
-      <td width="134">&nbsp;</td>
-      <td width="178">&nbsp;</td>
-      <td width="170" align="right">第${requestScope.pageBean.currentPage}/${requestScope.pageBean.totalPages} 页</td>
+      <td height="30" colspan="2">总共${sessionScope.pageBean.totalRows}条记录</td>
+      <td width="165">&nbsp;</td>
+      <td width="87">&nbsp;</td>
+      <td width="76">&nbsp;</td>
+      <td width="379" align="right">第${sessionScope.pageBean.currentPage}/${sessionScope.pageBean.totalPages} 页</td>
     </tr>
     <tr>
-      <td width="27" height="30" align="center" bgcolor="lavender">&nbsp;</td>
-      <td width="91" align="center" bgcolor="lavender">书籍编号</td>
+      <td width="61" height="30" align="center" bgcolor="lavender">&nbsp;</td>
+      <td width="149" align="center" bgcolor="lavender">书籍编号</td>
       <td align="center" bgcolor="lavender">书籍名称</td>
+      <td align="center" bgcolor="lavender">书籍图片</td>
       <td align="center" bgcolor="lavender">书籍作者</td>
       <td align="center" bgcolor="lavender">相关操作</td>
     </tr>
-    <c:forEach items="${requestScope.pageBean.data}" var="book">
+    <c:forEach items="${sessionScope.pageBean.data}" var="book">
       <tr>
       <td height="30">&nbsp;</td>
       <td align="center">${book.bookid}</td>
       <td align="center">${book.bookname}</td>
+      <td align="center"><img src="${path}/book!getPicture.action?${book.bookid}" alt="书籍的图片" /></td>
       <td align="center">${book.author}</td>
       <td align="center"><a href="#">删除</a>&nbsp; <a href="#">更新</a></td>
     </tr>
@@ -73,12 +77,12 @@ body,td,th {
       <td height="30">&nbsp;</td>
       <td align="center">&nbsp;</td>
       <td align="center">&nbsp;</td>
-      <td colspan="2" align="right">请选择：
-      <c:forEach var="i" begin="1" end="${requestScope.pageBean.totalPages}">
-      <c:if test="${requestScope.pageBean.currentPage == i}">
+      <td colspan="3" align="right">请选择：
+      <c:forEach var="i" begin="1" end="${sessionScope.pageBean.totalPages}">
+      <c:if test="${sessionScope.pageBean.currentPage == i}">
       [${i}]&nbsp;
       </c:if>
-      <c:if test="${requestScope.pageBean.currentPage != i}">
+      <c:if test="${sessionScope.pageBean.currentPage != i}">
         <a href="#" onClick="submitForm(${i});">${i}&nbsp;</a>
       </c:if>
       </c:forEach>

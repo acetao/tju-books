@@ -27,6 +27,7 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 	//搜索书籍时的关键字，当调用search方法时才有效
     private String keyWords =""; 
     
+    //
     
 	public void setBook(Book book) {
 		this.book = book;
@@ -74,7 +75,9 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		PageBean  pageBean =  this.bookBiz.searchBook(keyWords,currentPage,PAGESIZE);
 		
 		ActionContext ac = ActionContext.getContext();
-		ac.put("pageBean", pageBean);
+		//将PageBean 放入Session中
+		ac.getSession().put("pageBean", pageBean);
+		
 		//将keyWords 放入request,以便页面获取相应的keyWords点击其他分页时使用
 		ac.put("keyWords", keyWords);
 		return "searchSuccess";
