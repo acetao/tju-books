@@ -68,7 +68,7 @@ body,td,th {
       <td height="30">&nbsp;</td>
       <td align="center">${book.bookid}</td>
       <td align="center">${book.bookname}</td>
-      <td align="center"><img src="${path}/book!getPicture.action?${book.bookid}" alt="书籍的图片" /></td>
+      <td align="center"><img src="${path}/image!getImage.action?imageId=${book.bookimage.imageId}" alt="书籍的图片" /></td>
       <td align="center">${book.author}</td>
       <td align="center"><a href="#">删除</a>&nbsp; <a href="#">更新</a></td>
     </tr>

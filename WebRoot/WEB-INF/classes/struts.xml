@@ -8,10 +8,14 @@
 	<!-- Struts中的action程序包 -->
 	<package name="actions" extends="struts-default" namespace="/">
 		<!-- Interceptor监听器 的注册-->
+		
 		<!-- Action动作类的注册 -->
 		<action name="book" class="bookAction">
 		  <result>/book/SearchBook.jsp</result>
 		  <result name="searchSuccess">/book/SearchBook.jsp</result>
-		</action>	
+		</action>
+		
+		<action name="image" class="imageAction">
+		</action>
 	</package>
 </struts>    
