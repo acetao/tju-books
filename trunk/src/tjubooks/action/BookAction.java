@@ -56,7 +56,7 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		return book;
 	}
 	
-	//发布书籍
+	//发布(添加）书籍
 	public String add() throws Exception{
 		this.bookBiz.add(book);
 		return SUCCESS;

@@ -17,6 +17,7 @@ request.setAttribute("path",path);
   <a href="index.jsp">返回首页</a>
   <a href="jsp/ShowEmp.jsp">查看全部员工信息</a>
   <br/>
+  <iframe name="uploadImgFrame" id="uploadImgFrame" width="100%",height="100%" scrolling="no"></iframe>
   <form name="addBook" method="post" action="${path}/book!add.action">
     <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>

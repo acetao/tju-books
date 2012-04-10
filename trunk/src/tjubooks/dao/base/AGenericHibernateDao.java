@@ -27,25 +27,21 @@ public abstract class AGenericHibernateDao<T extends Serializable, ID extends Se
 	@SuppressWarnings("unchecked")
 	@Override
 	public T create(T entity) {
-		// TODO Auto-generated method stub
 		return (T) this.getHibernateTemplate().save(entity);
 	}
 
 	@Override
 	public T findById(ID id) {
-		// TODO Auto-generated method stub
 		return this.getHibernateTemplate().get(persistentClass, id);
 	}
 
 	@Override
 	public void delete(ID id) {
-		// TODO Auto-generated method stub
 		this.getHibernateTemplate().delete(findById(id));
 	}
 
 	@Override
 	public void update(T entity) {
-		// TODO Auto-generated method stub
 		this.getHibernateTemplate().update(entity);
 	}
 
