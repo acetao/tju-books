@@ -16,6 +16,20 @@
 		</action>
 		
 		<action name="image" class="imageAction">
+		    <result name="uploadImageSuccess">/book/uploadImage.jsp</result>
+		</action>
+		
+		<action name="user" class="userAction">
+		  <result name="registerOk">/userManage/login.jsp</result>
+		  <result name="nameAlreadyExist">/userManage/register.jsp</result>
+		  <result name="loginOk">/userCenterService/userCenter.jsp</result>
+		  <result name="notMatched">/userManage/login.jsp</result>
+		</action>
+		
+		<action name="userCenter" class="userCenterAction">
+		  <result name="userInfo">/userCenterService/userInfo.jsp</result>
+		  <result name="updateOk">/userCenterService/userCenter.jsp</result>
+		  <result name="releasedBooks">/userCenterService/releasedBooks.jsp</result>
 		</action>
 	</package>
 </struts>    

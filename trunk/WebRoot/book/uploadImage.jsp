@@ -13,11 +13,11 @@ request.setAttribute("path",path);
 </head>
 
 <body>
-    <s:form action="fileUpload.action" method="POST" enctype="multipart/form-data">
-        <img src="../image/defaultBook.jpg" width="100" height="150" alt="上传图片" longdesc="../image/s8873793.jpg" /><br/>
-        <s:hidden name="imageId" value="" />  
-        <s:file name="myFile" label="MyFile" ></s:file>
-        <s:submit label="提交"></s:submit>  
-    </s:form> 
+  <s:form id="upLoadImgForm" action="image!addImage.action" method="POST" enctype="multipart/form-data">
+    <img src="../image/defaultBook.jpg" width="100" height="150" alt="上传图片" />
+    <s:hidden name="imageId" value="" /> 
+    <s:file name="image" id="uploadImg" value="选择图片" ></s:file>
+    <s:submit value="提交" align="left"></s:submit>     
+  </s:form> 
 </body>
 </html>
