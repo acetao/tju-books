@@ -16,6 +16,17 @@ request.setAttribute("path",path);
 <script type="text/javascript" src="scripts/jquery.jcarousel.pack.js"></script>
 <script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="scripts/jquery.jcarousel.setup.js"></script>
+
+
+  <script>
+    function submitForm(myCurrentPage){
+		var currentPage =  document.getElementById("currentPage");
+		currentPage.value = myCurrentPage;
+		var form = document.getElementById("searchForm");
+		form.submit();
+	};
+  </script>
+
 </head>
 <body id="top">
 <div class="wrapper col1">
