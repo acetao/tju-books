@@ -12,7 +12,7 @@
 		<!-- Action动作类的注册 -->
 		<action name="book" class="bookAction">
 		  <result>/book/SearchBook.jsp</result>
-		  <result name="searchSuccess">/book/SearchBook.jsp</result>
+		  <result name="searchSuccess">/index.jsp</result>
 		</action>
 		
 		<action name="image" class="imageAction">

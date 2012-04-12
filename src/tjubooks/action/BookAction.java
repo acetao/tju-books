@@ -18,7 +18,7 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 	private IBookBiz bookBiz;
 	
 	//每页显示的结果数
-	private final int PAGESIZE =  1;
+	private final int PAGESIZE =  12;
 	
 	//分页查看时有效，当传入的参数中含该字段时自动被封装，默认值为1,
 	//该字段在分类浏览和按关键字搜索时被使用
@@ -81,5 +81,10 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		//将keyWords 放入request,以便页面获取相应的keyWords点击其他分页时使用
 		ac.put("keyWords", keyWords);
 		return "searchSuccess";
+	}
+	
+	public String findById() throws Exception{
+		
+		return "findIdOk";
 	}
 }
