@@ -13,5 +13,9 @@ public interface IBookBiz {
     
     //发布（添加）书籍信息
 	public abstract void add(final Book book);
+	
+	//yuan
+	public abstract PageBean searchBookByUserid(int userid,
+			final int currentPage, final int pageSize);
 
 }

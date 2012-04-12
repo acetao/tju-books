@@ -38,6 +38,17 @@ public class BookBiz implements IBookBiz {
 		this.bookDao.create(book);
 	}
 
+	@Override
+	//yuan
+	public PageBean searchBookByUserid(int userid, int currentPage,
+			int pageSize) {
+		System.out.println("BookBiz.searchBookByUserid:userid="+userid);
+		String strHQL = "select b from Book as b where b.user.userid = ? order by b.bookid";	
+		//String likeWords =  "%"+String.valueOf(userid)+"%";
+		//System.out.println("BookBiz.searchBookByUserid:likeWords="+likeWords);
+		Object[] params = new Integer[]{userid}; 
+		return this.bookDao.findByPage(strHQL, params, currentPage, pageSize);
+	}
 
 
 }

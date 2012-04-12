@@ -4,6 +4,8 @@ import tjubooks.biz.IImageBiz;
 import tjubooks.po.Bookimage;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,6 +16,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
+import org.hibernate.Hibernate;
 
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
@@ -28,6 +31,25 @@ public class ImageAction extends ActionSupport implements
 	private Bookimage bookImage;
 	// Spring 框架进行依赖注入
 	private IImageBiz imageBiz;
+	
+	//对于上传图片时有用
+	private String filename;
+	private File image; // 与提交的表单中的s:file标记中的name属性一致
+	private String imageFileName; // 待上传的文件名称，固定格式xxxFileName（xxx与s:file标记中的name属性一致）
+	
+	
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public void setImage(File image) {
+		this.image = image;
+	}
+
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
 	public void setBookImage(Bookimage bookImage) {
 		this.bookImage = bookImage;
 	}
@@ -72,6 +94,19 @@ public class ImageAction extends ActionSupport implements
 	}
 	
 	public String addImage(){
+		InputStream in = null;
+		try {
+			in = new FileInputStream(image);
+			Blob blob = Hibernate.createBlob(in);
+			bookImage.setImage(blob);
+			imageBiz.addImage(bookImage);
+			System.out.println("addImage execute!");
+			return "uploadImageSuccess";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("addImage execute!");
 		return null;
 	}
 	
