@@ -154,4 +154,14 @@
 			<ref bean="bookBiz" />
 		</property>
 	</bean>
+	
+	<!-- 关于书籍的Action在此注册 -->
+    <bean id="findBookByIdAction" class="tjubooks.action.bookAction.FindBookByIdAction" abstract="false"
+		scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+	
 </beans>
