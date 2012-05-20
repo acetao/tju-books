@@ -15,8 +15,8 @@ public class UserCenterAction extends ActionSupport implements ModelDriven<User>
 		Preparable {
     
 	private User user;
-	private IUserBiz userBiz;
 	
+	private IUserBiz userBiz;
 	private IBookBiz bookBiz;
 	
 	//每页显示的结果数
@@ -52,6 +52,7 @@ public class UserCenterAction extends ActionSupport implements ModelDriven<User>
 		return "releasedBooks";
 	}
 	
+	// 查看书籍详情
 	public String userInfo(){
 		return "userInfo";
 	}

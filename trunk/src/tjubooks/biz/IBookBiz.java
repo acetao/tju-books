@@ -14,8 +14,14 @@ public interface IBookBiz {
     //发布（添加）书籍信息
 	public abstract void add(final Book book);
 	
+	// 查看单本书籍
+	public abstract Book findById(final Integer Id);
+	
 	//yuan
 	public abstract PageBean searchBookByUserid(int userid,
 			final int currentPage, final int pageSize);
-
+    
+	public abstract void UpdateBook(final Book book);
+	
+	public abstract PageBean findByCategory(final int categoryId,int currentPage,int pageSize);
 }

@@ -115,6 +115,7 @@
 			<ref bean="attentBookDao"/>
 		</property>
 	</bean>
+	
 	<!-- 注册Action控制器层的动作类对象，并将biz业务逻辑层对象进行注入-->	
 	<bean id="bookAction" class="tjubooks.action.BookAction" abstract="false"
 		scope="prototype" lazy-init="default" autowire="default">
@@ -130,7 +131,14 @@
 		</property>
 	</bean>
 	
-	<bean id="imageAction" class="tjubooks.action.ImageAction" abstract="false"
+	<bean id="getImageAction" class="tjubooks.action.imageAction.GetImageAction" abstract="false"
+		scope="prototype" lazy-init="default" autowire="default">
+		<property name="imageBiz">
+			<ref bean="imageBiz" />
+		</property>
+	</bean>
+	
+	<bean id="uploadImageAction" class="tjubooks.action.imageAction.UpLoadImageAction" abstract="false"
 		scope="prototype" lazy-init="default" autowire="default">
 		<property name="imageBiz">
 			<ref bean="imageBiz" />

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="actions" location="50,108" size="1365,385">
+    <action name="book" location="1169,66" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="SearchBook.jsp" />
+      </result>
+      <result name="searchSuccess">
+        <resourceEdge source="searchSuccess" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="image" location="1169,181" size="150,41">
+      <result name="uploadImageSuccess">
+        <resourceEdge source="uploadImageSuccess" routing="0" target="success.jsp" />
+      </result>
+    </action>
+    <action name="uploadImage" location="1169,276" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="user" location="504,255" size="150,104">
+      <result name="registerOk">
+        <resourceEdge source="registerOk" routing="0" target="login.jsp" />
+      </result>
+      <result name="nameAlreadyExist">
+        <resourceEdge source="nameAlreadyExist" routing="0" target="register.jsp" />
+      </result>
+      <result name="loginOk">
+        <resourceEdge source="loginOk" routing="0" target="userCenter.jsp" />
+      </result>
+      <result name="notMatched">
+        <resourceEdge source="notMatched" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="userCenter" location="119,265" size="150,83">
+      <result name="userInfo">
+        <resourceEdge source="userInfo" routing="0" target="userInfo.jsp" />
+      </result>
+      <result name="updateOk">
+        <resourceEdge source="updateOk" routing="0" target="userCenter.jsp" />
+      </result>
+      <result name="releasedBooks">
+        <resourceEdge source="releasedBooks" routing="0" target="releasedBooks.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="testAction" location="200,650" size="184,104">
+    <action name="fileUpload" location="28,36" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="SearchBook.jsp" path="/book/SearchBook.jsp" location="1480,150" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="1200,10" size="150,55" />
+  <webResource name="success.jsp" path="/success.jsp" location="1200,535" size="150,55" />
+  <webResource name="error.jsp" path="/error.jsp" location="1480,360" size="150,55" />
+  <webResource name="login.jsp" path="/userManage/login.jsp" location="920,605" size="150,55" />
+  <webResource name="register.jsp" path="/userManage/register.jsp" location="675,535" size="150,55" />
+  <webResource name="userCenter.jsp" path="/userCenterService/userCenter.jsp" location="10,675" size="150,55" />
+  <webResource name="userInfo.jsp" path="/userCenterService/userInfo.jsp" location="150,535" size="150,55" />
+  <webResource name="releasedBooks.jsp" path="/userCenterService/releasedBooks.jsp" location="395,535" size="150,55" />
+  <package name="image" location="137,24" size="170,70" />
+</Struts2Diagram>
+

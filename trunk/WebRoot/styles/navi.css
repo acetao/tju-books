@@ -9,13 +9,13 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 #topnav{
 	padding:15px 0;
 	z-index:1000;
-	}
+}
 
 #topnav ul, #topnav li{
 	margin:0;
 	padding:0;
 	list-style:none;
-	font-size:14px;
+	font-size:20px;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	}
 
@@ -40,7 +40,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	line-height:normal;
 	margin:0;
 	padding:0;
-	}
+}
 
 #topnav li a:link, #topnav li a:visited, #topnav li a:hover{
 	display:block;
@@ -50,7 +50,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 	background-color:#4C4C4E;
 	text-transform:uppercase;
 	font-weight:bold;
-	}
+}
 
 #topnav ul ul li a:link, #topnav ul ul li a:visited{
 	border:none;
@@ -59,7 +59,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 #topnav li a:hover, #topnav li.active a{
 	color:#D51D29;
 	background-color:#4C4C4E;
-	}
+}
 	
 #topnav li li a:link, #topnav li li a:visited{
 	width:150px;

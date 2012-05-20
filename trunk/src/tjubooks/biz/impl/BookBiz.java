@@ -50,5 +50,27 @@ public class BookBiz implements IBookBiz {
 		return this.bookDao.findByPage(strHQL, params, currentPage, pageSize);
 	}
 
-
+	// 删除书籍
+    public void delBook(Integer id){
+    	this.bookDao.delete(id);
+    }
+    
+    // 根据Id查看单本书籍
+    public Book findById(final Integer id){
+    	return this.bookDao.findById(id);
+    }
+    
+    // 更新书籍信息
+    public void UpdateBook(final Book book){
+    	this.bookDao.update(book);
+    }
+    
+    // 查看该分类下的所有书籍
+    public PageBean findByCategory(final int categoryId,int currentPage,int pageSize){
+    	int  beginCategory = categoryId;
+    	int endCategory = categoryId + 16777216;
+		String strHQL = "select b from Book as b where b.Category as ";
+		Object[] params = new Object[]{beginCategory,endCategory}; 
+		return this.bookDao.findByPage(strHQL, params, currentPage, pageSize);
+    }
 }

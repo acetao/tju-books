@@ -2,6 +2,9 @@ package tjubooks.action;
 
 import tjubooks.biz.IBookBiz;
 import tjubooks.po.Book;
+import tjubooks.po.Bookimage;
+import tjubooks.po.Category;
+import tjubooks.po.User;
 import tjubooks.vo.PageBean;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -18,7 +21,7 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 	private IBookBiz bookBiz;
 	
 	//每页显示的结果数
-	private final int PAGESIZE =  12;
+	private final int PAGESIZE =  8;
 	
 	//分页查看时有效，当传入的参数中含该字段时自动被封装，默认值为1,
 	//该字段在分类浏览和按关键字搜索时被使用
@@ -27,8 +30,21 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 	//搜索书籍时的关键字，当调用search方法时才有效
     private String keyWords =""; 
     
-    //
+    // 分类浏览的分类
+    private int category;
     
+    
+    // 更新时操作的信息
+    //private int imageId;
+    private int  CategoryId;
+//	private Bookimage bookimage;
+//	private Category category;
+//	private User user;
+    
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
 	public void setBook(Book book) {
 		this.book = book;
 	}
@@ -52,11 +68,10 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 	
 	@Override
 	public Book getModel() {
-		// TODO Auto-generated method stub
 		return book;
 	}
 	
-	//发布(添加）书籍
+	//发布(添加）书籍      /book!add
 	public String add() throws Exception{
 		this.bookBiz.add(book);
 		return SUCCESS;
@@ -68,6 +83,7 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		ActionContext ac = ActionContext.getContext();
 		ac.put("pageBean", pageBean);
 		return SUCCESS;
+		// return "bird"
 	}
 	
 	// 根据关键字搜索书籍
@@ -83,8 +99,10 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		return "searchSuccess";
 	}
 	
+	// 查找具体某本书籍并显示
 	public String findById() throws Exception{
-		
+		Book myBook = this.bookBiz.findById(book.getBookid());
+		ActionContext.getContext().getSession().put("bookDetail", book);
 		return "findIdOk";
 	}
 }

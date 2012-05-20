@@ -24,13 +24,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,
 
 	@Override
 	public void prepare() throws Exception {
-		// TODO Auto-generated method stub
 		user = new User();
 	}
 
 	@Override
 	public User getModel() {
-		// TODO Auto-generated method stub
 		return user;
 	}
 	

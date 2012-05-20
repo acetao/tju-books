@@ -3,8 +3,10 @@
 <struts>
 	<!-- 配置Struts中的Action动作类全部由Spring框架托管 -->
 	<constant name="objectFactory" value="spring"></constant>
+	
 	<!-- 配置Struts中的参数传递乱码解决方案 -->
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	
 	<!-- Struts中的action程序包 -->
 	<package name="actions" extends="struts-default" namespace="/">
 		<!-- Interceptor监听器 的注册-->
@@ -15,10 +17,7 @@
 		  <result name="searchSuccess">/index.jsp</result>
 		</action>
 		
-		<action name="image" class="imageAction">
-		    <result name="uploadImageSuccess">/book/uploadImage.jsp</result>
-		</action>
-		
+		<!-- 与用户登录注册相关的操作  -->
 		<action name="user" class="userAction">
 		  <result name="registerOk">/userManage/login.jsp</result>
 		  <result name="nameAlreadyExist">/userManage/register.jsp</result>
@@ -26,10 +25,42 @@
 		  <result name="notMatched">/userManage/login.jsp</result>
 		</action>
 		
+		<!-- 用户中心 -->
 		<action name="userCenter" class="userCenterAction">
 		  <result name="userInfo">/userCenterService/userInfo.jsp</result>
 		  <result name="updateOk">/userCenterService/userCenter.jsp</result>
 		  <result name="releasedBooks">/userCenterService/releasedBooks.jsp</result>
 		</action>
 	</package>
+	
+    <!--  处理图片的动作类 -->
+	<package name="image" extends="struts-default" namespace="/">
+	
+	  <action name="uploadImage"  class="uploadImageAction">
+	    <param name="maximumSize">409600</param>
+        <param name="allowedTypes">
+          image/jepg,image/bmp,image/png,image/gif
+        </param>
+        <result name="success" type="redirect">/success.jsp</result>  
+		<result name="input">/error.jsp</result>
+	  </action>
+	  
+	  <action name="image" class="getImageAction">
+	    <result name="noImage">/error.jsp</result>
+	    <result >/success.jsp</result>
+	  </action>
+	</package>
+	
+	<!-- Struts中的action程序包 -->
+	<package name="testAction" extends="struts-default" namespace="/test/">
+		<!-- Interceptor监听器 的注册-->
+		
+		<!-- Action动作类的注册 -->
+		<action name="fileUpload" class="test.UploadFileAction">
+		  <result name="success">/success.jsp</result>
+		  <result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+
 </struts>    
