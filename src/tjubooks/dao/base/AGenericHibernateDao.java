@@ -26,8 +26,8 @@ public abstract class AGenericHibernateDao<T extends Serializable, ID extends Se
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T create(T entity) {
-		return (T) this.getHibernateTemplate().save(entity);
+	public ID create(T entity) {
+		return (ID) this.getHibernateTemplate().save(entity);
 	}
 
 	@Override

@@ -20,6 +20,4 @@ public class AttentBookBiz implements IAttentBookBiz {
 		Object[] params = new Integer[]{userid}; 
 		return this.attentBookDao.findByPage(strHQL, params, currentPage, pageSize);
 	}
-
-
 }

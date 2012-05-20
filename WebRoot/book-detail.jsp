@@ -12,7 +12,6 @@ request.setAttribute("path",path);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="imagetoolbar" content="no" />
 <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-<link rel="stylesheet" href="styles/iframe-content.css" type="text/css" />
 <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="scripts/jquery.jcarousel.pack.js"></script>
 <script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
@@ -36,7 +35,7 @@ request.setAttribute("path",path);
       <li>您好！<a href="#">退出</a></li>
       <li><a href="#">个人中心</a></li>
       <li><a href="#">关于我们</a></li>
-<!--      <li class="last"><a href="#">移动版</a></li>-->
+      <li class="last"><a href="#">移动版</a></li>
     </ul>
     <br class="clear" />
   </div>
@@ -45,7 +44,7 @@ request.setAttribute("path",path);
 <div class="wrapper col2">
   <div id="header">
     <div class="fl_left">
-      <h1><a href="#">天津大学图书交易平台</a></h1>
+      <h1><a href="#">图书交流平台</a></h1>
     </div>
     <div class="fl_right"> 
     	<form id="searchForm" method="post" action="${path}/book!search.action">
@@ -64,9 +63,9 @@ request.setAttribute("path",path);
 <div class="wrapper col3">
   <div id="topnav">
     <ul>
-      <li class="active"><a href="index.jsp">首页</a></li>
-      <li><a href="style-demo.html">发布书籍</a></li>
-      <li><a href="full-width.html">贵求书</a></li>
+      <li class="active"><a href="index.html">首页</a><span>Test Text Here</span></li>
+      <li><a href="style-demo.html">发布书籍</a><span>Test Text Here</span></li>
+      <li><a href="full-width.html">贵求书</a><span>Test Text Here</span></li>
 <!--      <li><a href="#">DropDown</a><span>Test Text Here</span>
         <ul>
           <li><a href="#">Link 1</a></li>
@@ -111,16 +110,6 @@ request.setAttribute("path",path);
             </c:forEach>
     	</div>
     </div>
-    <div style="float:right; padding-right:10px; font-size:20px; margin-top:50px;">请选择：
-      <c:forEach var="i" begin="1" end="${sessionScope.pageBean.totalPages}">
-      <c:if test="${sessionScope.pageBean.currentPage == i}">
-      [${i}]&nbsp;
-      </c:if>
-      <c:if test="${sessionScope.pageBean.currentPage != i}">
-        <a href="#" onClick="submitForm(${i});">${i}&nbsp;</a>
-      </c:if>
-      </c:forEach>页
-    </div>
     <br class="clear" />
   </div>
 </div>
@@ -138,7 +127,7 @@ request.setAttribute("path",path);
       </ul>
     </div>
     <div class="footbox">
-      <h2>购书网站</h2>
+      <h2></h2>
       <ul>
         <li><a href="#">京东360</a></li>
         <li><a href="#">亚马逊</a></li>
@@ -171,7 +160,7 @@ request.setAttribute("path",path);
 <!-- ####################################################################################################### -->
 <div class="wrapper col7">
   <div id="copyright">
-    <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_left">Copyright &copy; 2012 - All Rights Reserved - <a href="#">天津大学软件学院</a></p>
     <p class="fl_right">Template by <a href="http://sc.chinaz.com/" title="Free Website Templates">sc.chinaz.com</a></p>
     <br class="clear" />
   </div>

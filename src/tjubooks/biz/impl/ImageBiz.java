@@ -18,8 +18,7 @@ public class ImageBiz implements IImageBiz {
 
 	@Override
 	public int addImage(Bookimage bookImage) {
-		Bookimage resultImage =  this.bookImageDao.create(bookImage);
-		return resultImage.getImageId();
+		return this.bookImageDao.create(bookImage);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public interface IGenericDao<T extends Serializable, ID extends Serializable> {
 
 	// DAO数据访问层中的通用方法声明
 
-	public abstract T create(T entity);
+	public abstract ID create(T entity);
 
 	public abstract T findById(ID id);
 
