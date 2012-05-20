@@ -12,7 +12,15 @@
 		<!-- Interceptor监听器 的注册-->
 		
 		<!-- Action动作类的注册 -->
-		<action name="book" class="bookAction">
+		
+		<!-- 与书籍有关的动作类的注册 -->
+		<action name="bookDetail" class="findBookByIdAction">
+		  <result type="redirect" name="success">/book/bookDetail.jsp</result>
+		  <result name="notFound" >/error.jsp</result>
+		</action>
+		
+		
+		<action name="searchBook" class="bookAction">
 		  <result>/book/SearchBook.jsp</result>
 		  <result name="searchSuccess">/index.jsp</result>
 		</action>
@@ -37,7 +45,7 @@
 	<package name="image" extends="struts-default" namespace="/">
 	
 	  <action name="uploadImage"  class="uploadImageAction">
-	    <param name="maximumSize">409600</param>
+	    <param name="maximumSize">4194304</param>  <!-- 设置文件大小小于4M --> 
         <param name="allowedTypes">
           image/jepg,image/bmp,image/png,image/gif
         </param>
@@ -45,8 +53,9 @@
 		<result name="input">/error.jsp</result>
 	  </action>
 	  
+	  <!-- 根据Id查找图片,需要的变量：imageId -->
 	  <action name="image" class="getImageAction">
-	    <result name="noImage">/error.jsp</result>
+	    <result name="notFound">/error.jsp</result>
 	    <result >/success.jsp</result>
 	  </action>
 	</package>
