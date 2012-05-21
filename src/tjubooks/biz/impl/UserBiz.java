@@ -15,7 +15,7 @@ public class UserBiz implements IUserBiz {
 
 	@Override
 	public void add(User user) {
-		userDao.create(user);
+		userDao.save(user);
 	}
 
 	@Override

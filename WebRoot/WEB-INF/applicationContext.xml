@@ -162,6 +162,11 @@
 			<ref bean="bookBiz" />
 		</property>
 	</bean>
-	
-	
+
+	<bean id="searchBookAcion" class="tjubooks.action.bookAction.SearchBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
 </beans>

@@ -9,20 +9,24 @@
 	
 	<!-- Struts中的action程序包 -->
 	<package name="actions" extends="struts-default" namespace="/">
-		<!-- Interceptor监听器 的注册-->
+		<!-- 全局的Result配置 -->
+		<global-results>
+			<result name="login">/userManage/logIn.jsp</result>
+		</global-results>
+		
+		<!-- Interceptor 监听器 的注册-->
 		
 		<!-- Action动作类的注册 -->
 		
 		<!-- 与书籍有关的动作类的注册 -->
+		<!-- 需要的参数:bookid ,放入sesssion里的值为bookDetail book实体类-->
 		<action name="bookDetail" class="findBookByIdAction">
 		  <result type="redirect" name="success">/book/bookDetail.jsp</result>
 		  <result name="notFound" >/error.jsp</result>
 		</action>
 		
-		
-		<action name="searchBook" class="bookAction">
-		  <result>/book/SearchBook.jsp</result>
-		  <result name="searchSuccess">/index.jsp</result>
+		<action name="searchBook" class="searchBookAcion">
+		  <result name="success">/index.jsp</result>
 		</action>
 		
 		<!-- 与用户登录注册相关的操作  -->
@@ -60,7 +64,7 @@
 	  </action>
 	</package>
 	
-	<!-- Struts中的action程序包 -->
+	<!-- 测试使用的 test Action 在此注册 -->
 	<package name="testAction" extends="struts-default" namespace="/test/">
 		<!-- Interceptor监听器 的注册-->
 		
@@ -71,5 +75,4 @@
 		</action>
 	</package>
 	
-
 </struts>    
