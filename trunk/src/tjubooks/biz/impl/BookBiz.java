@@ -35,7 +35,7 @@ public class BookBiz implements IBookBiz {
 
 	@Override
 	public void add(Book book) {
-		this.bookDao.create(book);
+		this.bookDao.save(book);
 	}
 
 	@Override

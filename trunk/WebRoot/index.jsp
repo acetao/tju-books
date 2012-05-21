@@ -48,7 +48,7 @@ request.setAttribute("path",path);
       <h1><a href="#">天津大学图书交易平台</a></h1>
     </div>
     <div class="fl_right"> 
-    	<form id="searchForm" method="post" action="${path}/book!search.action">
+    	<form id="searchForm" method="post" action="${path}/searchBook.action">
         	<!--<input type="text" name="search_entry" style=" height:27px; width:300px;float:left;"/>-->
            <!-- <img src="images/search-btn1.png" onclick="submitForm(1)" style="background-color:#FFF;float:left;" />-->
             <label for="keyWords"></label>
@@ -103,7 +103,7 @@ request.setAttribute("path",path);
        	<div class="all">
            	<c:forEach items="${sessionScope.pageBean.data}" var="book">
             	<div class="book">
-            	  <a href="#"><img class="book" src="${path}/image!getImage.action?imageId=${book.bookimage.imageId}" alt="书籍的图片" /></a><br />
+            	  <a href="${path}/bookDetail.action?bookId=${book.bookid}"><img class="book" src="${path}/image.action?imageId=${book.bookimage.imageId}" alt="书籍的图片" /></a><br />
                   ${book.bookname}<br />
                   ${book.author}<br /><br />
                   <div style="color:red;" ><strong>价格：￥${book.price}</strong></div>

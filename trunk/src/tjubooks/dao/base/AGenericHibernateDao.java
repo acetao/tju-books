@@ -26,7 +26,7 @@ public abstract class AGenericHibernateDao<T extends Serializable, ID extends Se
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public ID create(T entity) {
+	public ID save(T entity) {
 		return (ID) this.getHibernateTemplate().save(entity);
 	}
 
@@ -76,7 +76,7 @@ public abstract class AGenericHibernateDao<T extends Serializable, ID extends Se
 						query.setFirstResult((currentPage - 1) * pageSize);
 						query.setMaxResults(pageSize);
 						pageBean.setData(query.list());
-						query = session.createQuery("select count(*) "
+						query = session.createQuery("select count(*)" 
 								+ strHQL.substring(strHQL.toLowerCase()
 										.indexOf("from")));
 						for (int i = 0; i < params.length; i++) {
