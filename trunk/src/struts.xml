@@ -29,6 +29,18 @@
 		  <result name="success">/index.jsp</result>
 		</action>
 		
+		<action name="bookOfCategory" class="bookOfCategoryAction">
+			<result>/book/resultBooks.jsp</result>  <!-- 此处需要修改 -->
+		</action>
+		
+		<action name="addBook" class="addBookAction">
+			<result>/success.jsp</result>  <!-- 此处需要修改 -->
+		</action>
+		
+		<action name="addRequestBook" class="addRequestBookAction">
+			<result>/success.jsp</result>  <!-- 此处需要修改 -->
+		</action>
+		
 		<!-- 与用户登录注册相关的操作  -->
 		<action name="user" class="userAction">
 		  <result name="registerOk">/userManage/login.jsp</result>

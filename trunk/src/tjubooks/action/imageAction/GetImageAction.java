@@ -28,7 +28,7 @@ import com.opensymphony.xwork2.Preparable;
 
 public class GetImageAction extends ActionSupport {
 
-	private Integer imageId;
+	private Integer imageId = 1;
 
 	// Spring 框架进行依赖注入
 	private IImageBiz imageBiz;
@@ -43,30 +43,41 @@ public class GetImageAction extends ActionSupport {
 
 	// 根据图片的id获取图片的信息
 	public String execute() {
+		if(null == imageId){
+			imageId = 1;
+		}
 		Bookimage mybookImage = this.imageBiz.findById(imageId);
 
-		if (mybookImage == null) {
-			System.out.println("Not Found");
-			return "notFound";
-		}
-		Blob image = mybookImage.getImage();
-
-		// 获取应用程序的Response级别
-		HttpServletResponse response = ServletActionContext.getResponse();
-
-		// 将图片写入输入输出流
-		try {
+		try{
+			// 获取应用程序的Response级别
+			HttpServletResponse response = ServletActionContext.getResponse();
+			
+			// 将图片写入输入输出流
 			InputStream in = null;
 			OutputStream out = response.getOutputStream();
-			if (image == null) {
-				// imageId存在但是不存在图像
+			// 存放图片
+			Blob image = null;
+			
+			if (null == mybookImage ) {
+				// imageId不存在，发送默认图片
 				String defaultImagePath = ServletActionContext
 						.getServletContext().getRealPath("/bookimage/images/default.jpg");
 				File defaultImage = new File(defaultImagePath);
 				in = new FileInputStream(defaultImage);
-			} else {
-				in = image.getBinaryStream();
+			}else{
+				image = mybookImage.getImage();
+
+				if (image == null) {
+					// imageId存在但是不存在图像，发送默认图片
+					String defaultImagePath = ServletActionContext
+							.getServletContext().getRealPath("/bookimage/images/default.jpg");
+					File defaultImage = new File(defaultImagePath);
+					in = new FileInputStream(defaultImage);
+				} else {
+					in = image.getBinaryStream();
+				}
 			}
+			
 			response.setContentType("image/jpeg");
 			byte[] buf = new byte[1024];
 			int len;
@@ -75,8 +86,7 @@ public class GetImageAction extends ActionSupport {
 			}
 			in.close();
 			out.close();
-
-		} catch (Exception e) {
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return null;

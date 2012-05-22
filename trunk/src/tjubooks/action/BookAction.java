@@ -83,7 +83,6 @@ public class BookAction extends ActionSupport implements ModelDriven<Book>,
 		ActionContext ac = ActionContext.getContext();
 		ac.put("pageBean", pageBean);
 		return SUCCESS;
-		// return "bird"
 	}
 	
 	// 根据关键字搜索书籍

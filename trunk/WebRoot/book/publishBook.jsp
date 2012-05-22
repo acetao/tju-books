@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
+<%@ taglib prefix="s" uri="/struts-tags" %> 
 <%
 String path = request.getContextPath();
 request.setAttribute("path",path);
@@ -11,61 +11,29 @@ request.setAttribute("path",path);
   <head>
     <title>My JSP 'AddDept.jsp' starting page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link href="css/publishBook.css" rel="stylesheet" type="text/css">
   </head>
   
   <body>
-  <a href="index.jsp">返回首页</a>
-  <a href="jsp/ShowEmp.jsp">查看全部员工信息</a>
-  <br/>
-  <iframe name="uploadImgFrame" id="uploadImgFrame" width="100%",height="100%" scrolling="no"></iframe>
-  <form name="addBook" method="post" action="${path}/book!add.action">
-    <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td height="25" colspan="2" align="center" bgcolor="lavender">发布新书籍</td>
-      </tr>
-      <tr>
-        <td width="87" height="25" align="right">书籍名称：</td>
-        <td width="213"><label>
-          <input type="text" name="ename" id="ename">
-        </label></td>
-      </tr>
-      <tr>
-        <td height="25" align="right">ISBN</td>
-        <td><input type="text" name="job" id="job"></td>
-      </tr>
-      <tr>
-        <td height="25" align="right">书籍作者</td>
-        <td><input type="text" name="hiredate" id="hiredate"></td>
-      </tr>
-      <tr>
-        <td height="25" align="right">出版社</td>
-        <td><input type="text" name="sal" id="sal"></td>
-      </tr>
-      <tr>
-        <td height="25" align="right">书籍简介</td>
-        <td><input type="text" name="comm" id="comm"></td>
-      </tr>
-      <tr>
-        <td height="25" align="right">书籍分类</td>
-        <td><label>
-          <select name="deptno" id="deptno">
-          	<c:if test="${empty requestScope.lstDept }">
-          		<script>location="/ssh2_crud/emp!preAdd.action";</script>
-          	</c:if>
-          	<c:forEach items="${requestScope.lstDept }" var="dept">
-          		<option value="${dept.deptno }">${dept.dname }</option>
-          	</c:forEach>
-          </select>
-        </label></td>
-      </tr>
-      <tr>
-        <td height="45">&nbsp;</td>
-        <td><label>
-          <input type="submit" name="btnAdd" id="btnAdd" value="添 加 新 员 工">
-        </label></td>
-      </tr>
-    </table>
-  </form>
+
+    <form id="publishBookForm" action="${path}/addBook.action" method="POST" ENCTYPE="multipart/form-data" onSubmit="return checkForm()">
+      <div>
+        <ul>
+          <li>书籍名称：<input type="text" name="bookname" id="bookname"></li>
+		  <li>图片：<input type="file" name="image" value="选择图片" id="upLoadImgForm_image"/></li>	
+		  <li>分类：
+            <select name="categoryid" id="categoryid">
+              <option value="16777216">公共类书籍</option>
+              <option value="33554432">专业性书籍</option>
+            </select>
+          </li>
+          <li></li>
+		  <li></li>		           			
+		</ul>
+      </div>
+      <input type="submit" name="submit" value="发布书籍" align="left"></input>   
+    </form>
+
     
   </body>
 </html>
