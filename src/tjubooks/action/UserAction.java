@@ -32,7 +32,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,
 		return user;
 	}
 	
-	
 	//ÓÃ»§×¢²á
 	public String register(){
 		System.out.println(user.getUsername());

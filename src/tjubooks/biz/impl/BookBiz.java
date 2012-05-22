@@ -4,12 +4,20 @@ import java.util.List;
 
 import tjubooks.biz.IBookBiz;
 import tjubooks.dao.IBookDao;
+import tjubooks.dao.ICategoryDao;
 import tjubooks.po.Book;
+import tjubooks.po.Category;
 import tjubooks.vo.PageBean;
 
 public class BookBiz implements IBookBiz {
+	
+	private ICategoryDao categoryDao;
 	private IBookDao bookDao;
-
+	
+	
+	public void setCategoryDao(ICategoryDao categoryDao) {
+		this.categoryDao = categoryDao;
+	}
 	public void setBookDao(IBookDao bookDao) {
 		this.bookDao = bookDao;
 	}
@@ -67,10 +75,15 @@ public class BookBiz implements IBookBiz {
     
     // 查看该分类下的所有书籍
     public PageBean findByCategory(final int categoryId,int currentPage,int pageSize){
-    	int  beginCategory = categoryId;
-    	int endCategory = categoryId + 16777216;
-		String strHQL = "select b from Book as b where b.Category as ";
-		Object[] params = new Object[]{beginCategory,endCategory}; 
+//    	int  beginCategory = categoryId;
+//    	int endCategory = categoryId + 16777216;
+//    	Category category =  this.categoryDao.findById(categoryId);
+    	
+		String strHQL = "select b from Book as b where b.category.categoryid = ?";
+		
+		Object[] params = new Integer[]{categoryId};
+		
+		// Object[] params = new Object[]{beginCategory,endCategory}; 
 		return this.bookDao.findByPage(strHQL, params, currentPage, pageSize);
     }
 }

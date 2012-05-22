@@ -94,6 +94,9 @@
 		<property name="bookDao">
 			<ref bean="bookDao" />
 		</property>
+		<property name="categoryDao">
+			<ref bean="categoryDao"></ref>
+		</property>
 	</bean>
 	<bean id="userBiz" class="tjubooks.biz.impl.UserBiz"
 		abstract="false" lazy-init="default" autowire="default">
@@ -113,6 +116,13 @@
 		abstract="false" lazy-init="default" autowire="default">
 		<property name="attentBookDao">
 			<ref bean="attentBookDao"/>
+		</property>
+	</bean>
+	
+	<bean id="requestBookBiz" class="tjubooks.biz.impl.RequestBookBiz"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="requestBookDao">
+			<ref bean="requestBookDao"/>
 		</property>
 	</bean>
 	
@@ -169,4 +179,29 @@
 			<ref bean="bookBiz" />
 		</property>
 	</bean>
+	
+	<bean id="bookOfCategoryAction" class="tjubooks.action.bookAction.BookOfCategoryAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+	<bean id="addBookAction" class="tjubooks.action.bookAction.AddBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+		<property name="imageBiz">
+			<ref bean="imageBiz" />
+		</property>
+	</bean>
+	
+	<bean id="addRequestBookAction" class="tjubooks.action.bookAction.AddRequestBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="requestBookBiz">
+			<ref bean="requestBookBiz" />
+		</property>
+	</bean>
+	
 </beans>

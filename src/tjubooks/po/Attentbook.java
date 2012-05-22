@@ -9,7 +9,6 @@ import java.util.Date;
 public class Attentbook implements java.io.Serializable {
 
 	// Fields
-
 	private Integer attentionId;
 	private User user;
 	private Book book;
@@ -29,7 +28,6 @@ public class Attentbook implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Integer getAttentionId() {
 		return this.attentionId;
 	}

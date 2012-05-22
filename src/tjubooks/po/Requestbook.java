@@ -9,7 +9,6 @@ import java.util.Date;
 public class Requestbook implements java.io.Serializable {
 
 	// Fields
-
 	private Integer requestId;
 	private User user;
 	private String reqBookName;
@@ -32,8 +31,6 @@ public class Requestbook implements java.io.Serializable {
 		this.reqDate = reqDate;
 		this.hasResponse = hasResponse;
 	}
-
-	// Property accessors
 
 	public Integer getRequestId() {
 		return this.requestId;

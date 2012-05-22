@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%
 String path = request.getContextPath();
@@ -134,7 +134,6 @@ request.setAttribute("path",path);
         <li><a href="http://e.tju.edu.cn">办公网</a></li>
         <li><a href="http://www.twt.edu.cn/">天外天</a></li>
         <li><a href="http://bbs.tju.edu.cn/">求实BBS</a></li>
-<!--        <li class="last"><a href="http://nc.tju.edu.cn/">网络中心</a></li>-->
       </ul>
     </div>
     <div class="footbox">
@@ -144,7 +143,6 @@ request.setAttribute("path",path);
         <li><a href="#">亚马逊</a></li>
         <li><a href="#">当当网</a></li>
         <li><a href="#">淘宝网</a></li>
-<!--        <li class="last"><a href="#">Praesent et eros</a></li>-->
       </ul>
     </div>
     <div class="footbox">
@@ -156,15 +154,6 @@ request.setAttribute("path",path);
         <li><a href="#">天涯书库</a></li>
       </ul>
     </div>
-<!--    <div class="footbox">
-      <h2>Lacus interdum</h2>
-      <ul>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Praesent et eros</a></li>
-        <li><a href="#">Lorem ipsum dolor</a></li>
-        <li><a href="#">Suspendisse in neque</a></li>
-      </ul>
-    </div>-->
     <br class="clear" />
   </div>
 </div>

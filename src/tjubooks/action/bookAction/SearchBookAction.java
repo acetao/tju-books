@@ -14,7 +14,7 @@ public class SearchBookAction extends ActionSupport {
 	//每页显示的结果数
 	private final int PAGESIZE =  4;
 	
-	//分页查看时有效，当传入的参数中含该字段时自动被封装，默认值为1,
+	//分页查看时有效，当传入的参数中含该字段时自动被封装，默认值为1
 	private int currentPage = 1;
 	
 	//搜索书籍时的关键字，当调用search方法时才有效
@@ -41,7 +41,8 @@ public class SearchBookAction extends ActionSupport {
 		
 		ActionContext ac = ActionContext.getContext();
 		//将PageBean 放入Session中
-		ac.getSession().put("pageBean", pageBean);
+		//ac.getSession().put("pageBean", pageBean);
+		ac.put("pageBean", pageBean);
 		
 		//将keyWords 放入request,以便页面获取相应的keyWords点击其他分页时使用
 		ac.put("keyWords", keyWords);
