@@ -24,4 +24,8 @@ public interface IBookBiz {
 	public abstract void UpdateBook(final Book book);
 	
 	public abstract PageBean findByCategory(final int categoryId,int currentPage,int pageSize);
+	
+	public abstract PageBean recommendBooks();
+	
+	public abstract PageBean recommendReqBooks();
 }

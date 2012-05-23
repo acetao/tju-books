@@ -1,0 +1,316 @@
+/* CSS Document */
+div{
+	display:block;
+}
+
+/*  以下从二手书网站摘录*/
+
+/* CSS Document */
+.index_content {
+	width:936px;
+	padding:3px 6px 6px 6px;
+	overflow:hidden;
+	border-left:1px solid #e1e1e1;
+	border-right:1px solid #e1e1e1;
+	background-color:#ffffff;
+}
+/* ================
+   左侧
+   ================ */
+.index_content .content_left {
+	background-color: #FAFBFE;
+	width:275px;
+	margin-left:3px;
+	margin-left:1px;
+	padding:0px 0px 15px 0px;
+	border:solid #d9efdc 1px;
+	float:left;
+	overflow:hidden;
+}
+/* ================
+   免费赠送
+   ================ */
+.index_content .content_left .free_send .free{
+	position:relative;
+}
+.index_content .content_left .free_send .send_book {
+	padding:26px 0px 0px 10px;
+	margin:5px 0px 0px 1px;
+	width:260px;
+	height:138px;
+	border-bottom:1px dashed #e1e1e1;
+	overflow:hidden;
+}
+.index_content .content_left .free_send .send_pic {
+	width:95px;
+	height:120px;
+	float:left;
+	border:1px solid #e1e1e1;
+}
+.index_content .content_left .free_send .send_pic a img {
+	width:95px;
+	height:120px;
+}
+.index_content .content_left .free_send .send_desc {
+	width:148px;
+	height:121px;
+	float:left;
+	padding:5px 0px 0px 10px;
+	font-size:12px;
+	line-height:20px;
+}
+.index_content .content_left .free_send .send_desc .send_title{
+	height:24px;
+	overflow:hidden;
+	font-weight:bold;
+}
+.index_content .content_left .free_send .send_desc ul{
+	text-align:left;
+}
+.index_content .content_left .free_send .send_desc ul img{
+	position:relative;
+	left:-118px;
+	top:-134px
+}
+/* ================
+   文本描述
+   ================ */
+.index_content .content_left .net_speak {
+	margin-left:8px;
+	margin-top:18px;	
+	_margin-top:14px;
+	overflow:hidden;
+}
+.index_content .content_left .net_speak a {
+	font-weight:bolder;
+	color:#009900;
+	font-weight:bold;
+}
+.index_content .content_left .net_speak .msg {
+	line-height:20px;
+}
+.index_content .content_left .net_speak .msg div {
+	font-size:12px;
+	margin-top:5px;
+}
+.index_content .content_left .net_speak .more {
+	margin:0px 10px 2px 0px;
+	color:#ff3301;
+	text-decoration:underline;
+	float:right;
+	font-size:12px;
+}
+/* ================
+   右侧
+   ================ */
+.index_content .content_right {
+	width:645px;
+	float:left;
+	margin:0px 0px 10px 10px;
+}
+/* ================
+   每日推荐
+   ================ */
+.index_content .content_right .day_suggest {
+	border:solid #d9efdc 1px;
+	width:643px;
+	height:280px;
+	overflow:hidden;
+	margin:0px 0px 0px 0px;
+	background-image: url("../page/images/bg_book_detail_info.gif");
+	background-position: center bottom;
+	background-repeat: repeat-x;
+}
+.index_content .content_right .image_suggest {
+	width:185px;
+	height:240px;
+	margin:20px 15px 20px 10px;
+	float:left;
+	border: 1px solid #E1E1E1;
+}
+.index_content .content_right .image_suggest img {
+	width:100%;
+	height:100%;
+}
+.index_content .content_right .text_suggest {
+	width:420px;
+	float:left;
+	margin-top:30px;
+}
+.index_content .content_right .text_suggest .title {
+	font-size:12px;
+	color:#009900;
+	font-weight:bold;
+}
+.index_content .content_right .text_suggest .content {
+	margin-top:5px;
+	text-align:center;
+}
+.index_content .content_right .text_suggest .content a {
+	color:#000;
+	font-weight:bold;
+	font-size:18px;
+	line-height:24px;
+}
+.index_content .content_right .text_suggest .content .msg {
+	font-size:12px;
+	margin-top:2px;
+}
+.index_content .content_right .text_suggest .net_admin_speak {
+	font-size:12px;
+	margin-top:8px;
+}
+#admin_speak_content{
+	text-indent:2em;
+	width:416px;
+	height:60px;
+	line-height:18px;
+}
+.index_content .content_right .text_suggest .share_book {
+	margin-top:10px;
+}
+.index_content .content_right .text_suggest .share_book a {
+	font-size:12px;
+	color:#fd6500;
+}
+.index_content .content_right .text_suggest .suggest_btn {
+	margin-right:10px;
+	margin-top:15px;
+	overflow:hidden;
+}
+.index_content .content_right .text_suggest .suggest_btn .look_book {
+	width:90px;
+	height:26px;
+	float:right;
+	line-height:20px;
+	margin-left:10px;
+}
+.index_content .content_right .text_suggest .suggest_btn .look_book a {
+	font-size:12px;
+	margin-left:5px;
+	color:#FFF;
+	text-decoration:none;
+}
+.index_content .content_right .text_suggest .suggest_btn .suggest_book {
+	width:90px;
+	float:right;
+	height:26px;
+	margin-left:10px;
+	line-height:20px;
+}
+.index_content .content_right .text_suggest .suggest_btn .suggest_book a {
+	font-size:12px;
+	margin-left:5px;
+	color:#FFF;
+	text-decoration:none;
+}
+/* ================
+   最新出售、求购
+   ================ */
+.index_mini_pager {
+	font-weight: normal;
+	font-size: 12px;
+	color: #999;
+	margin:0px;
+	margin-left:390px;
+	margin-right:5px;
+}
+.index_page_change {
+	font-weight: normal;
+	font-size: 12px;
+	margin:0px;
+}
+.index_page_change .index_pre_none {
+	padding:9px 15px 10px 15px;
+	width:28px;
+	height:28px;
+	background-image: url(../page/images/index_prev_page.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.index_page_change .index_pre_page {
+	padding:9px 15px 10px 15px;
+	width:28px;
+	height:28px;
+	background-image: url(../page/images/index_prev_page-_c.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.index_page_change .index_next_none {
+	padding:9px 15px 10px 15px;
+	width:28px;
+	height:28px;
+	background-image: url(../page/images/index_next_page.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.index_page_change .index_next_page {
+	padding:9px 15px 10px 15px;
+	width:28px;
+	height:28px;
+	background-image: url(../page/images/index_next_page-_c.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.index_book_list {
+	margin:10px 0px 0px 0px;
+	overflow:hidden;
+	background:#fff;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #D9EFDC;
+	border-bottom-color: #D9EFDC;
+	border-left-color: #D9EFDC;
+}
+.index_book_list .user_title {
+	background-image: url("../page/images/bg_titlebar.gif");
+	background-position: center bottom;
+	background-repeat: repeat-x;
+	border: 1px solid #EEEEEE;
+	color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 10px;
+}
+.index_book_list .books_show {
+	width:auto;
+	height:226px;
+	overflow:hidden;
+}
+.index_book_list .books_show .one_book {	
+	margin:5px 0px 0px 0px;
+	float:left;
+	width:160px;
+	overflow:hidden;
+}
+.index_book_list .books_show .one_book:hover {
+	background-color:#eaeaea;
+}
+.index_book_list .books_show .image_show{
+}
+.index_book_list .books_show .image_show .image_book:hover {
+	background-color:#eaeaea;
+}
+.index_book_list .books_show .image_show .image_book {
+	width:140px;
+	height:160px;
+	margin:10px 8px auto 15px;
+	border:solid #e1e1e1 1px;
+}
+.index_book_list .books_show .image_show .image_book img{
+	width:100%;
+	height:100%;
+}
+.index_book_list .books_show .image_show .image_msg {
+	text-align:center;
+	margin-top:2px;
+	font-size:12px;
+	height:40px;
+	width:154px;
+	overflow:hidden;
+}
+	

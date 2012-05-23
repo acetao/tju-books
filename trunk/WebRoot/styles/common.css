@@ -1,0 +1,1823 @@
+﻿/* ====================
+   公共样式
+   ==================== */
+*{padding:0;margin:0;}
+
+div {
+    margin:0 auto;
+    padding:0;
+}
+
+.block {
+    width:950px;
+    height:auto;
+    overflow:hidden;
+}
+
+.logo a {
+    float:left;
+    height:70px;
+    width:240px;
+    display:block;
+    background-image:url(../page/images/logo.gif);
+    background-repeat:no-repeat;
+    background-position:top;
+}
+
+.logo a:hover {
+    background-image:url(../page/images/logo.gif);
+    background-repeat:no-repeat;
+    background-position:bottom;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style-type:none;
+}
+
+.must_write {
+    color:red;
+}
+
+hr {
+    margin:0;
+    padding:0;
+}
+.site_notice{
+    margin-right: auto;
+    margin-left: auto;
+    color: red;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 30px;
+    overflow: visible;
+    width: 910px;
+    height: 18px;
+    text-align:center;
+}
+
+#ajaxProcessTip{
+    position:absolute;
+    top:55px;
+    right:30px;
+    z-index:999;
+}
+
+.text_content {
+    margin:30px;
+}
+
+.text_content h3 {
+    margin:10px 0;
+    color:#338D0E;
+}
+
+.other_title{
+    font-size:14px;
+    color:#FF9900;
+    font-weight:bold;
+}
+
+.split {
+    height:10px;
+}
+/*弹框*/
+.auto_fill_box .bg {
+    filter:alpha(opacity=50);
+    background:#666666;
+    opacity:0.5;
+    -moz-opacity:0.5;
+    left:0;
+    top:0;
+    position:absolute;
+    z-index:999;
+    overflow:hidden;
+}
+
+.auto_fill_box .popup_window {
+    position:absolute;
+    top:10%;
+    width:760px;
+    height:460px;
+    background:#fff;
+    border:6px solid #f2f2f2;
+    z-index:1000;
+    overflow:hidden;
+    -moz-border-radius:3px;
+    -webkit-box-shadow:3px 3px 3px #555;
+    -moz-box-shadow:3px 3px 3px #555;
+}
+.auto_fill_box .popup_title {
+    text-align:right;
+    background-image: url(../page/images/bg_Menubox.gif);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCC;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.auto_fill_box .popup_window .popup_content {
+    width:720px;
+    height:393px;
+    padding:20px;
+    overflow:auto;
+}
+
+.auto_fill_box .popup_window .popup_content .book_list .one_book {
+    float:left;
+    margin:5px 10px 10px 5px;
+    width:156px;
+    height:248px;
+    overflow:hidden;
+}
+
+.auto_fill_box .popup_window .popup_content .book_list .one_book .book_img {
+    width:100px;
+    height:126px;
+    border:1px solid #ccc;
+    padding:3px;
+    margin-top:10px;
+    margin-left:0px;
+}
+
+.auto_fill_box .popup_window .popup_content .book_list .one_book .book_img img {
+    width:100px;
+    height:126px;
+    margin:0px;
+}
+
+.auto_fill_box .popup_window .popup_content .book_list .one_book .book_detail {
+    margin:0px;
+}
+
+
+/*字体颜色*/
+a {
+    text-decoration:none;
+    color:#258F01;
+}
+
+a:hover {
+    color:#258F01;
+    text-decoration:underline;
+}
+
+:focus {
+    outline:none;
+}
+
+.red {
+    color:red;
+    font-size:12px;
+    margin:0px 5px 0px 0px;
+}
+
+/*模块容器*/
+.box_border {
+    border:1px solid #c5e4ff;
+    overflow:hidden;
+}
+
+.box {
+    overflow:hidden;
+}
+
+.main_box_border {
+    border:1px solid #e1e1e1;
+    overflow:hidden;
+    background-color:#fff;
+}
+
+.main_box {
+    margin:auto;
+    overflow:hidden;
+    background-color:#fff;
+}
+
+/*每页正文开始的标题*/
+.main_body_header {
+    height:35px;
+    font-size:14px;
+    font-weight:bold;
+    overflow:hidden;
+    border-left-width:1px;
+    border-left-style:solid;
+    border-left-color:#e1e1e1;
+    border-right-width:1px;
+    border-right-style:solid;
+    border-right-color:#e1e1e1;
+    color:#999;
+    background-color: #fafafa;
+    background-image: url(../page/images/bg_main_body_header.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #e1e1e1;
+}
+
+.main_body_header .main_body_title {
+    float:left;
+    height:35px;
+    overflow:hidden;
+    color:#338D0E;
+    width: 300px;
+}
+
+.main_body_header .main_body_title span {
+    float:left;
+    margin-top:8px;
+    margin-bottom:10px;
+    margin-left:10px;
+}
+
+
+/*橙色标题*/
+h3 {
+    font-size: 14px;
+}
+h4 {
+    height:40px;
+    line-height:40px;
+    text-align:right;
+    font-weight:bold;
+    background:#fff;
+    margin-left:10px;
+}
+
+h4 span {
+    float:left;
+    width:auto;
+    height:33px;
+    text-align:left;
+    font-size:14px;
+    font-weight:bold;
+    color:#338D0E;
+}
+
+p span {
+    margin:0 25px;
+    font-size:12px;
+}
+
+span {
+    margin-top:5px;
+    margin-right:0;
+    margin-bottom:5px;
+    margin-left:0;
+}
+
+.price {
+    font-size:14px;
+    margin:0 5px;
+    color:#f60;
+    font-weight:800;
+    font-family:arial;
+}
+
+.pager {
+    float:right;
+    font-weight: normal;
+    font-size: 12px;
+    color: #999;
+    margin:10px;
+}
+.pager span{
+    color: #999;
+}
+
+.mini_pager {
+    font-weight: normal;
+    font-size: 12px;
+    color: #999;
+    margin:0px;
+    margin-left:760px;
+}
+
+/*通用表单样式*/
+.input-name {
+    text-align:right;
+    width:100px;
+    height:32px;
+    float:left;
+    margin-right:10px;cursor: text;
+}
+
+.input-text-bg {
+    color:#333;
+    width:200px;
+    border:1px solid #c5c5c5;
+    padding:3px;cursor: text;
+
+}
+
+.input-text-code {
+    color:#333;
+    width:90px;
+    border:1px solid #c5c5c5;
+    padding:3px;
+    background-attachment:scroll;cursor: text;
+
+}
+
+/*注册表单*/
+#choose_user_reg,#choose_user_search{
+    font-size:14px;
+    padding-left:75px;
+}
+
+#check_user_province {
+    color:red;
+}
+
+#category1,#category2,#edition,#language,#pack,#u_selPrice,#u_agingdegree,#book_type{
+    border:1px solid #c5c5c5;
+    width:97px;
+    padding:3px;
+}
+#choose_user_sale{ }
+#user_province,#user_college,#user_school,#selPicture{
+    width:208px;
+    padding:3px;
+    border: 1px solid #c5c5c5;
+}
+#desc,#u_say,#user_feedback_content {
+    height:100px;
+    border:1px solid #c5c5c5;
+    width:360px;
+    vertical-align:middle;
+    font-size:12px;
+    line-height:18px;
+    padding:3px;cursor: text;
+}
+/*验证码样式*/
+#captcha{
+    border-top:1px solid #9f9f9f;
+    border-left:1px solid #9f9f9f;
+}
+/*通用按钮样式*/
+.my-btn-big {
+    background:url(../page/images/wel-btn-b.gif);
+    height:32px;
+    width:109px;
+    display:inline-block;
+    border:0 none;
+    color:#FFF;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.my-btn-big:hover {
+    background-position:-109px 0;
+}
+
+.my-btn-big:active {
+    background-position:-218px 0;
+}
+
+/* ====================
+   页头
+   ==================== */
+.page_header {
+    margin-top:0;
+    margin-left:auto;
+    width:100%;
+    margin-right:auto;
+    top:0;
+    margin-bottom: 13px;
+}
+/* ====================
+   页头-个人信息
+   ==================== */
+.userInfo {
+    padding-top:8px;
+    color:#CEEFBA;
+}
+
+.navigation {
+    height:34px;
+    width:948px;
+    _width:944px;
+    background-image: url(../page/images/bg_nav.gif);
+    background-repeat: repeat-x;
+    background-position: center top;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-right-color: #e1e1e1;
+    border-left-color: #e1e1e1;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #e1e1e1;
+    padding-bottom: 6px;
+    _padding-bottom: 0px;
+
+}
+
+.navigation li {
+    float:left;
+    font-size:14px;
+    margin-top:0;
+    margin-bottom:0;
+    text-align:center;
+}
+
+.navigation li a {
+    color:#333;
+    text-decoration:none;
+    height:24px;
+    display:block;
+    width:90px;
+    margin-top:0;
+    padding-top:7px;
+    padding-bottom:7px;
+    font-weight: bold;
+}
+
+.navigation li a:hover {
+    text-decoration:none;
+    display:block;
+    background-image:url(../page/images/bg_nav_hover.gif);
+    background-repeat:repeat-x;
+    background-position:top;
+    color:#000;
+}
+
+.navigation li .selected {
+    color:#ffffff;
+    text-decoration:none;
+    display:block;
+    background-image:url(../page/images/bg_nav_hover.gif);
+    background-repeat:repeat-x;
+    background-position:bottom;
+}
+
+/* ====================
+   页尾
+   ==================== */
+.footer {
+    text-align:center;
+    width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    color: #666;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #090;
+    height: 100px;
+}
+
+.footer a {
+    padding-right:6px;
+    padding-left:6px;
+    color: #666;
+}
+
+
+/* ====================
+   搜索输入框
+   ==================== */
+.indexsearchBox {
+    height: 210px;
+    _height: 170px;
+    #height: 160px;
+    background-image: url(../page/images/bg_index_search.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 948px;
+    _width: 948px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-right-color: #e1e1e1;
+    border-left-color: #e1e1e1;
+    _padding-top: 48px;
+    #padding-top: 48px;
+}
+
+.search_more a{
+    color: #000;
+}
+
+.searchBox {
+    background-image: url(../page/images/bg_search_banner.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    height: 127px;
+    width: 950px;
+}
+
+.index_search_form_table {
+    margin-left: 193px;
+    #margin-left: 185px;
+    _margin-left: 186px;
+    padding-top: 49px;
+    line-height:18px;
+}
+.search_form_table {
+    margin-left: 191px;
+    #margin-left: 186px;
+    _margin-left: 186px;
+    padding-top: 40px;
+    _margin-top: 36px;
+    #margin-top: 38px;
+}
+.inp-search {
+    width:430px;
+    font-size:14px;
+    background-image:url(../page/images/search_input_bg.gif);
+    background-repeat:no-repeat;
+    background-position:center top;
+    text-indent:6px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: #96cf87;
+}
+.input_td {
+
+}
+.input_td :hover {
+    background-image:url(../page/images/search_input_bg.gif);
+    background-repeat:no-repeat;
+    background-position:center -42px;
+}
+.input_td :focus {
+    background-image:url(../page/images/search_input_bg.gif);
+    background-repeat:no-repeat;
+    background-position:center -84px;
+}
+.searchbottonone {
+    padding-right:10px;
+    padding-left:10px;
+    padding-bottom:6px;
+    padding-top:6px;
+    height:40px;
+    width:128px;
+    font-size:0;
+    background-image:url(../page/images/btn_shell_search.gif);
+    border-top-width:0;
+    border-right-width:0;
+    border-bottom-width:0;
+    border-left-width:0;
+    background-position:top;
+    text-indent: -9999px;
+    display:block;
+}
+
+.searchbottontwo {
+    padding-right:10px;
+    padding-left:10px;
+    padding-bottom:6px;
+    padding-top:6px;
+    height:40px;
+    width:128px;
+    font-size:0;
+    background-image:url(../page/images/btn_shell_search.gif);
+    border-top-width:0;
+    border-right-width:0;
+    border-bottom-width:0;
+    border-left-width:0;
+    background-position:bottom;
+    text-indent: -9999px;
+    display:block;
+
+}
+/* ====================
+   迷你搜索框
+   ==================== */
+.searchBox_mini {
+    height:0;
+    font-size:0;
+    margin-right: 6px;
+    _margin-right: 3px;
+    padding-top: 1px;
+}
+.search_form_table_mini {
+}
+.inp-search_mini {
+    color:#030;
+    border:0;
+    height:26px;
+    line-height: 26px;
+    width:210px;
+    text-indent:3px;
+    background-image:url(../page/images/search_input_bg_mini.gif);
+    background-position:left top;
+    background-repeat:repeat;
+    padding-left: 4px;
+}
+.input_td_mini {
+    height:26px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+.input_td_mini :hover {
+    background-image:url(../page/images/search_input_bg_mini.gif);
+    background-position:left -26px;
+    background-repeat:no-repeat;
+}
+.input_td_mini :focus {
+    background-image:url(../page/images/search_input_bg_mini.gif);
+    background-position:left bottom;
+    background-repeat:no-repeat;
+}
+.searchbottonone_mini {
+    cursor:pointer;
+    height:26px;
+    background-image:url(../page/images/btn_shell_search_mini.gif);
+    width:32px;
+    font-size:0;
+    border-top-width:0;
+    border-right-width:0;
+    border-bottom-width:0;
+    border-left-width:0;
+    border-top-style:double;
+    border-right-style:double;
+    border-bottom-style:double;
+    border-left-style:double;
+    background-position:top;
+    margin-left: -6px;
+    text-indent: -9999px;
+    display:block;
+}
+.searchbottontwo_mini {
+    cursor:pointer;
+    height:26px;
+    background-image:url(../page/images/btn_shell_search_mini.gif);
+    width:32px;
+    font-size:0;
+    border-top-width:0;
+    border-right-width:0;
+    border-bottom-width:0;
+    border-left-width:0;
+    border-top-style:double;
+    border-right-style:double;
+    border-bottom-style:double;
+    border-left-style:double;
+    background-position:bottom;
+    margin-left: -6px;
+    text-indent: -9999px;
+    display:block;
+}
+
+/* ====================
+   登陆/登陆/密码找回/高级搜索页面
+   ==================== */
+.box_passport_wrap {
+    padding-top:40px;
+    padding-right:100px;
+    padding-bottom:70px;
+    padding-left:200px;
+    background-color: #FFF;
+}
+
+.passport_box {
+    margin:0;
+    overflow:hidden;
+    border:1px solid #e1e1e1;
+    background-color: #FFF;
+}
+.search_form {
+    padding-top:60px;
+    padding-right:200px;
+    padding-bottom:120px;
+    padding-left:200px;
+    border:1px solid #e1e1e1;
+    background-color: #FFF;
+}
+/* ==============================
+   首页index_ad_and_contact区域
+   ============================== */
+.index_ad_and_contact {
+    height:138px;
+    width:948px;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-right-style:double;
+    border-top-style:double;
+    border-left-style:double;
+    border-right-color:#e1e1e1;
+    border-left-color:#e1e1e1;
+    border-top-color:#e1e1e1;
+    background-color: #F9F9F9;
+}
+
+.index_ad_and_contact a {
+    color:#666;
+}
+
+.index_ad_and_contact a:hover {
+    color:#000;
+}
+
+.index_ad_and_contact .index_ad_and_contact_left {
+    width:600px;
+    float:left;
+    border-right-width: 1px;
+    border-right-style: dashed;
+    border-right-color: #CCC;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.index_ad_and_contact_left .left_list {
+    margin: 5px;
+}
+
+.index_ad_and_contact .index_ad_and_contact_right {
+    width:285px;
+    float:left;
+    padding: 10px;
+    background-image: url(../page/images/bg_index_icon.jpg);
+    background-repeat: no-repeat;
+    background-position: 14px 38px;
+}
+.index_ad_and_contact_right .right_list {
+    padding-left:46px;
+    margin: 5px;
+}
+
+/* ====================
+   首页四个功能按钮
+   ==================== */
+.index_links {
+    height:47px;
+    width:600px;
+    background-image: url(../page/images/index_links.gif);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-top: 20px;
+}
+
+.index_links_school a {
+    float:left;
+    height:47px;
+    width:150px;
+    display:block;
+}
+
+.index_links_school a:hover {
+    background-image:url(../page/images/index_links_bottom_01.gif);
+}
+
+.index_links_books a {
+    float:left;
+    height:47px;
+    width:150px;
+    display:block;
+}
+
+.index_links_books a:hover {
+    background-image:url(../page/images/index_links_bottom_02.gif);
+}
+
+.index_links_login a {
+    float:left;
+    height:47px;
+    width:150px;
+    display:block;
+}
+
+.index_links_login a:hover {
+    background-image:url(../page/images/index_links_bottom_03.gif);
+}
+
+.index_links_contact a {
+    float:left;
+    height:47px;
+    width:150px;
+    display:block;
+}
+
+.index_links_contact a:hover {
+    background-image:url(../page/images/index_links_bottom_04.gif);
+}
+
+/* ====================
+   搜索结果:商品列表显示
+   ==================== */
+.goodsList {
+    background-color:#fff;
+    overflow:hidden;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.goodsListNone {
+    text-align:center;
+    margin:20px;
+    font-size:14px;
+    color:#666;
+}
+
+.goodsList .one_book {
+    float:left;
+    border-bottom:1px dashed #e8e8e8;
+    background:#fff;
+    margin-left:10px;
+    margin-right:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+    overflow:hidden;
+    width:900px;
+}
+
+.goodsList .one_book .book_img {
+    float:left;
+    width:100px;
+    height:126px;
+    overflow:hidden;
+    border:1px solid #ccc;
+    margin:5px;
+}
+
+.goodsList .one_book .book_img img {
+    float:left;
+    width:100px;
+    height:126px;
+}
+
+.goodsList .one_book .good_detail {
+    width:760px;
+    float:left;
+    margin-top:0;
+    margin-right:5px;
+    margin-bottom:0;
+    margin-left:15px;
+    overflow:hidden;
+}
+
+.goodsList .one_book .good_detail .book_title_info {
+    color:#666;
+    margin-top:5px;
+    margin-right:10px;
+    margin-bottom:5px;
+}
+
+.goodsList .one_book .good_detail .good_name {
+    margin:5px 10px 5px 0px;
+    color:#408a1d;
+    font-size:14px;
+    font-weight:bold;
+}
+.goodsList .one_book .good_detail .good_name :hover{
+    background-color: #0F0;
+}
+.goodsList .one_book .good_detail .description {
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:0;
+    margin-right:0;
+    padding-top:10px;
+    border-top:1px solid #ccc;
+    overflow:hidden;
+    width:760px;
+}
+
+.goodsList .one_book .good_detail .book_info {
+    margin:5px 0px 5px 0;
+}
+
+.follow{
+    margin:0 10px;
+}
+.follow a{
+    color: #00F;
+    font-weight: bold;
+}
+.goodsList .one_book .good_detail .book_info .now_price {
+    font-size:14px;
+    color:red;
+    font-weight:bold;
+}
+
+.goodsList .one_book .good_detail .book_info .old_price {
+    font-size:14px;
+}
+
+/* ====================
+   图书详情
+   ==================== */
+.book_box {
+    border:1px solid #e1e1e1;
+    overflow:hidden;
+    background-color: #FFF;
+    overflow:auto; zoom:1;
+}
+
+.book_box .book_detail_info {
+    padding:10px;
+    border-bottom:1px solid #e1e1e1;
+    overflow:hidden;
+    height:225px;
+    background-image: url(../page/images/bg_book_detail_info.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+.book_box .book_detail_none {
+    padding:10px;
+    text-align:center;
+    font-size:14px;
+    color:#666;
+}
+
+.book_box .book_detail_info .book_img {
+    float:left;
+    width:150px;
+    height:200px;
+    background-color:#f4f4f4;
+    border:1px solid #e1e1e1;
+    margin:6px;
+    background-image:url(../page/images/bg_Menubox.gif);
+    text-align:center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.book_box .book_detail_info .book_img img {
+    margin:0px;
+    width:150px;
+    height:189px;
+}
+
+.book_box .book_detail_info .book_detail {
+    width:710px;
+    float:left;
+    margin-left:25px;
+}
+
+.book_box .book_detail_info .book_detail .book_name {
+    color:#258F01;
+    font-size:14px;
+    font-weight:800;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.book_box .book_detail_info .book_detail .book_title_info {
+    color:#666;
+    margin-top:5px;
+    margin-right:2px;
+    margin-bottom:5px;
+    margin-left:10px;
+}
+
+.book_box .book_detail_info .book_detail .old_price {
+    font-size:14px;
+}
+
+.book_box .hr_light {
+    border-top-width:1px;
+    border-top-style:dotted;
+    border-top-color:#ccc;
+    width:95%;
+    margin-right:auto;
+    margin-left:auto;
+    height:1px;
+}
+
+.book_box .description {
+    margin:5px 10px 10px;
+    color:#000;
+}
+
+.book_box .description .content {
+    margin:10px;
+    overflow:hidden;
+}
+
+.book_box .sale_infos {
+    margin:5px 10px 10px;
+    color:#000;
+    overflow:hidden;
+}
+
+.book_box .sale_infos .sale_content {
+    color:#000;
+}
+
+.book_box .sale_infos .sale_content .sale_list {
+    margin:5px 0 0 5px;
+}
+
+.book_box .sale_infos .sale_content .sale_list span {
+    float:left;
+    height:24px;
+    line-height:30px;
+    text-align:left;
+    margin:0 0 0 10px;
+}
+
+.book_box .sale_infos .sale_content .sale_list .sale_detail {
+    height:30px;
+    text-align:right;
+    font-weight:100;
+    background-color:#F5F6F8;
+    background-image: url(../page/images/sale_list_icon.gif);
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 0;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-color: #d2dbc1;
+    border-right-color: #d2dbc1;
+    border-left-color: #d2dbc1;
+}
+
+.book_box .sale_infos .sale_content .sale_list .user_say {
+    width:901px;
+    background-color: #F5F6F8;
+    margin-bottom: 6px;
+    padding-top: 3px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    overflow:hidden;
+    border: 1px solid #d2dbc1;
+    word-break:break-all;
+    word-wrap:break-word;
+    width:901px; }
+
+.book_box .sale_infos .sale_content .sale_list .user_contract {
+    text-align:right;
+    margin-right: 0px;
+    padding-right:6px;
+    width: 80px;
+    height: 24px;
+    padding-top:3px;
+
+
+}
+.book_box .sale_infos .sale_content .sale_list .user_contract a {
+    color: #338D0E;
+    font-weight: bold;
+}
+/* ====================
+   个人中心－－tab
+   ==================== */
+#person_tab {
+    width:936px;
+    padding:6px;
+    background-color:#e1e1e1;
+    background-image:url(../page/images/bg_Menubox.gif);
+    border:1px solid #e1e1e1;
+}
+
+.Menubox {
+    width:130px;
+    line-height:32px;
+    overflow:hidden;
+    z-index:999;
+    float:left;
+    padding-top:6px;
+}
+
+.Menubox ul {
+    margin:0;
+    list-style:square;
+}
+
+.Menubox li {
+    font-size:14px;
+    display:block;
+    cursor:pointer;
+    width:120px;
+    height:32px;
+    text-align:left;
+    color:#000;
+    padding-left:10px;
+    border-bottom-width:1px;
+    border-bottom-style:dashed;
+    border-bottom-color:#E1E1E1;
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:#f2f2f2;
+    border-left-width:4px;
+    border-left-style:solid;
+    border-left-color:#f2f2f2;
+}
+
+.Menubox .tab_hit {
+    font-size:14px;
+    display:block;
+    cursor:pointer;
+    width:120px;
+    height:32px;
+    text-align:left;
+    color:#000;
+    padding-left:10px;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:#e1e1e1;
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:#e1e1e1;
+    border-left-width:4px;
+    border-left-style:solid;
+    border-left-color:#258F01;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-image: url(../page/images/bg_main_body_header.gif);
+}
+
+.Menubox ul :hover {
+    background-image: url(../page/images/bg_nav.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:#E1E1E1;
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:#f2f2f2;
+    border-left-width:4px;
+    border-left-style:solid;
+    border-left-color:#999;
+    background-color:#f2f2f2;
+}
+
+.Contentbox {
+    border:1px solid #e1e1e1;
+    width:804px;
+    float:left;
+    overflow:auto;
+    background-color:#FFF;
+    padding-top:10px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    background-image: url(../page/images/bg_book_detail_info.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+.Contentbox .nohover {
+    display:none;
+}
+
+/* ====================
+   个人中心－－个人信息
+   ==================== */
+.span_button {
+    line-height:24px;
+    height:24px;
+    display:inline-block;
+    border:0 none;
+    color:#666;
+    cursor:pointer;
+    background-image:url(../page/images/wel-btn-s.gif);
+    padding-right:12px;
+    padding-left:12px;
+    _padding-right:4px;
+    _padding-left:4px;
+    border:1px solid #CCC;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    background-repeat:repeat-x;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.span_button a{
+    color: #666;
+}
+
+.span_button:hover {
+    background-position:0 -32px;
+    border:1px solid #999;
+    color: #000;
+}
+
+.span_button:active {
+    background-position:0 -64px;
+    border:1px solid #999;
+}
+
+
+#user_base_info {
+    font-size:12px;
+    margin-top:20px;
+    margin-right:20px;
+    margin-left:20px;
+}
+
+#user_base_info .user_info {
+    margin:10px;
+}
+
+#user_base_info .user_info ul {
+}
+
+#user_base_info .user_info li {
+    display:block;
+    height:32px;
+    color:#000;
+}
+.user_info_title {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 30px;
+    padding: 3px;
+}
+
+#user_base_info .user_info li .span1 {
+    width:100px;
+    text-align:right;
+}
+
+#user_base_info .user_info li .span2 {
+    width:150px;
+    text-align:left;
+}
+
+/* ===========================
+   个人中心－－修改个人信息/密码
+   =========================== */
+.Contentbox .modify_info {
+    padding-top:20px;
+    padding-left:20px;
+}
+
+/* ======================================
+   个人中心－－当前出售/求购、历史出售/求购
+   ====================================== */
+.Contentbox .content_div {
+    margin:10px;
+    overflow:hidden;
+}
+
+.Contentbox .content_div .publish_div {
+    overflow:hidden;
+    width:750px;
+}
+
+.Contentbox .content_div .publish_div .one_book {
+    float:left;
+    font-size:12px;
+    border-bottom-width:1px;
+    border-bottom-style:dotted;
+    border-bottom-color:#ccc;
+    padding: 6px;
+    margin-left:5px;
+    margin-top:5px;
+    width:750px;
+}
+
+.Contentbox .content_div .publish_div :hover {
+}
+
+.Contentbox .content_div .publish_div .one_book .book_img{
+    float:left;
+    margin:0px 10px 5px 0px;
+    width:100px;
+    height:126px;
+    border:1px solid #ccc;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_img img{
+    margin:0px;
+    width:100px;
+    height:126px;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_info{
+    float:left;
+    margin:0px 0px 5px 0px;
+    width:620px;
+    height:105px;
+    overflow:hidden;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_info .book_name{
+    font-size:14px;
+    font-weight:bold;
+    color:#258F01;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_info span{
+    margin-right: 6px;
+    word-break:break-all;
+    word-wrap:break-word;
+    width:520px;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_button {
+    float: right;
+    margin-right: 15px;
+}
+
+.Contentbox .content_div .publish_div .one_book .book_button span{
+
+}
+
+/* ================
+   校园选择页面
+   ================ */
+.region_select {
+    height:98px;
+    overflow:hidden;
+    padding-right: 1px;
+    _padding-right: 0px;
+    padding-left: 1px;
+}
+
+.region_select .region_item {
+    float:left;
+    height:95px;
+    width:114px;
+    margin-right: 3px;
+    background-image: url(../page/images/list_province_line.gif);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.region_select .region_item .position {
+    padding-left: 10px;
+    height:24px;
+    padding-top:1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #e1e1e1;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.region_select .region_item .list_province {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.region_select .region_item .list_province li {
+    cursor:pointer;
+    padding-right: 5px;
+    padding-left: 5px;
+    float: left;
+    margin-left: 8px;	_margin-left: 4px;
+
+    width: 36px;
+    text-align: center;
+}
+
+.region_select .region_item .list_province .choosed {
+    color:#FFF;
+    background-color:#F90;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.region_select .selected {
+    border-bottom-width:3px;
+    border-bottom-style:solid;
+    border-bottom-color:#64A20A;
+    background-image: url(../page/images/bg_book_detail_info.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+.show_school {
+    background-color: #FFF;
+    padding: 4px;
+    border: 1px solid #e1e1e1;
+    margin: 0;
+}
+
+.show_school .school_item {
+    overflow:hidden;
+    margin: 0;
+    padding: 10px 0;
+    overflow:auto; zoom:1;
+}
+
+.show_school .school_item .school_title {
+    font-size:14px;
+    font-weight:bold;
+    color:#338d0e;
+    margin: 6px;
+    padding: 3px;
+    background-color: #F4F6F6;
+    width:920px;
+}
+
+.show_school .school_item .school_list a{
+    color:#000;
+}
+
+.show_school .school_item .school_list .li_school {
+    float:left;
+    width:165px;
+    height:24px;
+    text-align:left;
+    line-height:15px;
+    margin-top: 10px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    _margin-left: 10px;
+}
+
+.nofind{
+    clear:both;
+    background-color: #F4F6F6;
+    height: 24px;
+    padding-left: 28px;
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    background-image: url(../page/images/nofind.gif);
+    background-repeat: no-repeat;
+    background-position: 9px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+/* ================
+   我的校园
+   ================ */
+.myschool {
+    margin:0;
+    overflow:hidden;
+    background:#fff;
+    _padding-top: 10px;
+    padding-bottom: 20px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-color: #e1e1e1;
+    border-bottom-color: #e1e1e1;
+    border-left-color: #e1e1e1;
+}
+
+.myschool .user_title {
+    font-size:14px;
+    font-weight:bold;
+    color:#333;
+    background-color: #F4F6F6;
+    margin: 12px;
+    _margin-top:0px;
+    padding-top: 3px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+}
+
+.myschool .hot_pb_title{
+    overflow:hidden;
+}
+
+.myschool .school_list {
+    overflow:hidden;
+    margin:10px 10px 10px 0px;
+    height:240px;
+}
+
+.myschool .school_list_none {
+    overflow:hidden;
+    margin:20px;
+    font-size:14px;
+    color:#666;
+}
+
+.myschool .school_list .pre_page {
+    float:left;
+    width:30px;
+    margin:50px 5px;
+}
+.myschool .school_list .pre_page .change_page{
+    width:17px;
+    height:34px;
+    background-image: url(../page/images/myschool_booklist_prev.gif);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+.myschool .school_list .pre_page :hover{
+    background-image: url(../page/images/myschool_booklist_prev.gif);
+    background-repeat: no-repeat;
+    background-position: -17px center;
+}
+.myschool .school_list .pre_page :active{
+    background-image: url(../page/images/myschool_booklist_prev.gif);
+    background-repeat: no-repeat;
+    background-position: -34px center;
+}
+.myschool .school_list .next_page {
+    float:right;
+    width:30px;
+    margin:50px 5px;
+}
+.myschool .school_list .next_page .change_page{
+    width:17px;
+    height:34px;
+    background-image: url(../page/images/myschool_booklist_next.gif);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.myschool .school_list .next_page :hover{
+    background-image: url(../page/images/myschool_booklist_next.gif);
+    background-repeat: no-repeat;
+    background-position: -17px center;
+}
+.myschool .school_list .next_page :active{
+    background-image: url(../page/images/myschool_booklist_next.gif);
+    background-repeat: no-repeat;
+    background-position: -34px center;
+}
+
+.myschool .school_list .one_book {
+    float:left;
+    margin-left:10px;
+    width:160px;
+}
+
+.myschool .school_list .one_book .book_img {
+    width:100px;
+    height:126px;
+    position:relative;
+    border:1px solid #ccc;
+    margin:0px;
+}
+
+.myschool .school_list .one_book .book_img img {
+    width:100px;
+    height:126px;
+}
+
+.myschool .school_list .one_book .book_detail {
+    margin:0px;
+    padding-top: 6px;
+}
+/* ==========================
+   我的校园－－最新发布－－tab
+   ========================== */
+.Horizontal_Menubox {
+    width:895px;
+    height:32px;
+    overflow:hidden;
+    z-index:999;
+    padding-left:15px;
+    line-height: 24px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #6BB130;
+    margin-top:15px;
+}
+
+.Horizontal_Menubox ul {
+    margin-left: 5px;
+}
+
+
+.Horizontal_Menubox li {
+    float:left;
+    display:block;
+    width:auto;
+    height:32px;
+    text-align:center;
+    color:#999;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:2px;
+    margin-bottom:2px;
+    font-weight: bold;
+    margin-right: 3px;
+    font-size: 14px;
+    padding-top:3px;
+}
+.Horizontal_Menubox label{
+    cursor:pointer;
+}
+.Horizontal_Menubox li:hover{
+    display: block;
+}
+.Horizontal_Menubox .hit_latest_tab {
+    display:block;
+    height:32px;
+    text-align:center;
+    color:#FFF;
+    padding-left:16px;
+    padding-right:16px;
+    margin-top:2px;
+    margin-bottom:2px;
+    background-color:#6BB130;
+    font-weight: bold;
+}
+
+.Horizontal_Contentbox {
+    border:0 none;
+    width:945px;
+    float:left;
+    overflow:hidden;
+    background-color:#FFF;
+    padding-top:10px;
+}
+
+.Horizontal_Contentbox .nohover {
+    display:none;
+}
+
+/* ================
+   图书分类
+   ================ */
+.book_type {
+    padding-top:10px;
+    padding-right:5px;
+    padding-bottom:10px;
+    padding-left:30px;
+
+    background-color: #FFF;
+    line-height: 240%;
+}
+
+.book_type span {
+    height:30px;
+    text-align:left;
+}
+
+.book_type .type1 {
+    width:60px;
+    background-image:url(../page/images/bg_type1_icon.gif);
+    padding-top:6px;
+    padding-right:10px;
+    padding-bottom:6px;
+    padding-left:10px;
+    background-repeat:no-repeat;
+    background-position:left center;
+    color:#338D0E;
+    font-weight:bold;
+    margin:10px;
+}
+
+.book_type .category2 .type2 {
+    cursor:pointer;
+    margin-top:5px;
+    margin-right:3px;
+    margin-bottom:0;
+    margin-left:3px;
+    padding-top:2px;
+    padding-right:4px;
+    padding-bottom:2px;
+    padding-left:4px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.book_type .category2 .selected {
+    background:#f90;
+    color:#FFF;
+}
+
+.search_condition {
+    margin-left:auto;
+    margin-right:auto;
+    background:#fafafa;
+    overflow:hidden;
+    background-color:#f5f5f5;
+    background-image:url(../page/images/bg_Menubox.gif);
+    height: 36px;
+    width: 880px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border: 1px solid #e1e1e1;
+}
+
+.search_condition ul {
+    overflow:hidden;
+    width:auto;
+    margin-top: 5px;
+    #margin-top: 8px;
+    _margin-top: 8px;
+    margin-right: 5px;
+    margin-left: 120px;
+}
+
+.search_condition li {
+    float:left;
+    margin-right:5px;
+}
+
+/* ================
+   发布图书
+   ================ */
+#help_notie {
+    margin: auto;
+    height: 35px;
+    background-color: #e8f4db;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-right-color: #e1e1e1;
+    border-left-color: #e1e1e1;
+}
+#help_notie P {
+    padding: 5px 0px 0px 30px;
+    margin: 0px;
+    height: 24px;
+    background-image: url(../page/images/help_tips.gif);
+    background-repeat: no-repeat;
+    background-position: 8px 6px;
+}
+#help_notie .help_notie_icon { padding: 0px; float: left; margin: 4px 10px 0px;}
+#help_notie .help_notie_close { padding: 0px; float: right; margin: 10px 8px 0px; cursor: pointer;}
+
+.publish_info {
+    border:1px solid #e1e1e1;
+    overflow:hidden;
+    padding-bottom:80px;
+    padding-left:200px;
+    padding-top:45px;
+    background-color: #FFF;
+}
+
+.publish_info .fItem {
+}
+
+.publish_info .fItem .must_write {
+    color:red;
+}
+
+.publish_info .fItem span {
+    margin:0px 5px 0px 0px;;
+}
+
+#index_share span{
+    height:16px!important;
+    line-height:16px!important;
+    padding-left:20px!important;
+    background:url(../sys_common/share/ico.png) no-repeat left;
+}
+
+#index_share li{
+    float:left;
+    width:100px;
+    height:22px;
+    line-height:22px;
+}
+
+/* ======================
+   友情链接
+   ====================*/
+.friendly_link{
+    height:62px;
+    width:948px;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-bottom-width:1px;
+    border-left-width:1px;
+    border-top-style:dashed;
+    border-right-style:double;
+    border-bottom-style:double;
+    border-left-style:double;
+    border-top-color:#e1e1e1;
+    border-right-color:#e1e1e1;
+    border-bottom-color:#e1e1e1;
+    border-left-color:#e1e1e1;
+    background-color: #F9F9F9;
+}
+.friendly_link .link_items{
+    margin:0px 0px 0px 15px;
+}
+.friendly_link .link_items .item{
+    margin:10px 15px 10px 0px;
+    float:left;
+}
+.friendly_link .link_items .item img{
+    width:115px;
+    height:40px;
+}

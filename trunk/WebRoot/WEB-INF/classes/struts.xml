@@ -9,13 +9,21 @@
 	
 	<!-- Struts中的action程序包 -->
 	<package name="actions" extends="struts-default" namespace="/">
+	
+	    <interceptors>
+		    <interceptor name="authority" class="authorityInterceptor"></interceptor>
+			<interceptor-stack name="authorityStack" >
+			  <interceptor-ref name="defaultStack"></interceptor-ref>
+			  <interceptor-ref name="authority"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
 		<!-- 全局的Result配置 -->
 		<global-results>
-			<result name="login">/userManage/logIn.jsp</result>
+			<result name="login">/login.jsp</result>
 		</global-results>
 		
 		<!-- Interceptor 监听器 的注册-->
-		
 		<!-- Action动作类的注册 -->
 		
 		<!-- 与书籍有关的动作类的注册 -->
@@ -26,6 +34,7 @@
 		</action>
 		
 		<action name="searchBook" class="searchBookAcion">
+		  <interceptor-ref name="authorityStack"></interceptor-ref>
 		  <result name="success">/index.jsp</result>
 		</action>
 		
@@ -37,9 +46,23 @@
 			<result>/success.jsp</result>  <!-- 此处需要修改 -->
 		</action>
 		
+		<action name="modifyBook" class="addBookAction">
+			<result>/success.jsp</result>  <!-- 此处需要修改 -->
+		</action>
+		
 		<action name="addRequestBook" class="addRequestBookAction">
 			<result>/success.jsp</result>  <!-- 此处需要修改 -->
 		</action>
+		
+		<action name="recommend" class="recommendAction">
+			<result>/index.jsp</result>  <!-- 此处需要修改，可以不修改 -->
+		</action>
+		<!-- 与用户有关的Action -->
+		<!--
+		<action name="userInfo" class="userInfoAction">
+			<result>/userManage/userInfo.jsp</result>  
+		</action>
+		-->
 		
 		<!-- 与用户登录注册相关的操作  -->
 		<action name="user" class="userAction">
@@ -49,17 +72,41 @@
 		  <result name="notMatched">/userManage/login.jsp</result>
 		</action>
 		
+		
+		
+		<!-- 与用户相关的操作 by 迟晓彤 -->
+		<action name="userLogin" class="userLoginAction">
+		  <result name="loginOk">/index.jsp</result>
+		  <result name="LoginFail">/login.jsp</result>
+		</action>
+		
+		<action name="userRegister" class="userRegisterAction">
+		  <result name="registerOk">/indexAfterLogin.jsp</result>
+		  <result name="registerFail">/userManage/register.jsp</result>
+		</action>
+		
+		<action name="userLogout" class="userLogoutAction">
+		  <result name="goto">/index.jsp</result>
+		</action>
+		
+		<!-- 用户中心  by 迟晓彤-->
+		<action name="modifyUserInfo" class="modifyUserInfoAction">
+		  <result name="success">/indexAfterLogin.jsp</result> <!-- 此处需要修改-->
+		</action>
+		<action name="userPassword" class="userPasswordAction">
+		  <result name="changesuccess">/indexAfterLogin.jsp</result>
+		  <result name="changefail">/userCenter/userPassword.jsp</result>
+		</action>
+		
 		<!-- 用户中心 -->
 		<action name="userCenter" class="userCenterAction">
-		  <result name="userInfo">/userCenterService/userInfo.jsp</result>
-		  <result name="updateOk">/userCenterService/userCenter.jsp</result>
-		  <result name="releasedBooks">/userCenterService/releasedBooks.jsp</result>
+		  <result name="userInfo">/userCenter/userInfo.jsp</result>
+		  <result name="updateOk">/userCenter/userCenter.jsp</result>
+		  <result name="releasedBooks">/userCenter/releasedBooks.jsp</result>
 		</action>
-	</package>
-	
-    <!--  处理图片的动作类 -->
-	<package name="image" extends="struts-default" namespace="/">
-	
+		
+		
+	  <!--  处理图片的动作类 -->	
 	  <action name="uploadImage"  class="uploadImageAction">
 	    <param name="maximumSize">4194304</param>  <!-- 设置文件大小小于4M --> 
         <param name="allowedTypes">
@@ -75,6 +122,7 @@
 	    <result >/success.jsp</result>
 	  </action>
 	</package>
+	
 	
 	<!-- 测试使用的 test Action 在此注册 -->
 	<package name="testAction" extends="struts-default" namespace="/test/">
