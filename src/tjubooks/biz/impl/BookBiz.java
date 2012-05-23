@@ -75,15 +75,25 @@ public class BookBiz implements IBookBiz {
     
     // 查看该分类下的所有书籍
     public PageBean findByCategory(final int categoryId,int currentPage,int pageSize){
-//    	int  beginCategory = categoryId;
-//    	int endCategory = categoryId + 16777216;
-//    	Category category =  this.categoryDao.findById(categoryId);
-    	
 		String strHQL = "select b from Book as b where b.category.categoryid = ?";
 		
 		Object[] params = new Integer[]{categoryId};
 		
-		// Object[] params = new Object[]{beginCategory,endCategory}; 
+
 		return this.bookDao.findByPage(strHQL, params, currentPage, pageSize);
     }
+	@Override
+	public PageBean recommendBooks() {
+		String strHQL = "select b from Book as b order by b.publishdate desc";
+		Object[] params =  new Object[]{};
+		
+		return this.bookDao.findByPage(strHQL, params, 1, 20);
+	}
+	@Override
+	public PageBean recommendReqBooks() {
+		String strHQL = "select b from Requestbook as b order by b.reqDate desc";
+		Object[] params =  new Object[]{};
+		
+		return this.bookDao.findByPage(strHQL, params, 1, 20);
+	}
 }

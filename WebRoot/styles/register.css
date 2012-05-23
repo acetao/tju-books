@@ -1,0 +1,27 @@
+/* CSS Document */
+
+@import url(navi.css);
+@import url(forms.css);
+@import url(tables.css);
+@import url(featured_slide.css);
+@import url(layout.css);
+
+#registerContent{
+	display:block;
+	width:80%;
+	margin:0px auto;
+	font-size:12px;
+	padding-top:10px;
+	background-color:#CCC;
+	}
+#registerContent div.eachInfo{
+	padding:0.5em 350px;
+	text-align:right;}
+#registerContent div.even{
+	background-color:#CCC;}
+#registerContent div.odd{
+	background-color:#99C;}
+#registerContent div.eachInfo span{
+	}
+#registerContent div#lastone{
+	border-top:3px solid gray;}

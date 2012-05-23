@@ -1,0 +1,33 @@
+/* CSS Document */
+
+@import url(navi.css);
+@import url(forms.css);
+@import url(tables.css);
+@import url(featured_slide.css);
+@import url(layout.css);
+
+div#logInContent{
+	width:300px;
+	height:200px;
+	text-align:center;
+	margin:0 auto;
+	padding-top:10px;
+	}
+div#title{
+	font-size:200%;
+	border-bottom:2px solid gray;
+	color:#000;
+	}
+div.eachInfo{
+	padding:1em 2em;}
+.eachInput{
+	width:200px;}
+#submitBtn{
+	float:right;
+	margin-right:30px;
+	background-color:#AAA;
+	}
+input#submitBtn:focus{
+	background-color:#DDD;}
+input#submitBtn:hover{
+	background-color:#DDD;}

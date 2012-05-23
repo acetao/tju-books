@@ -126,6 +126,12 @@
 		</property>
 	</bean>
 	
+	<bean id="categoryBiz" class="tjubooks.biz.impl.CategoryBiz"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="categoryDao">
+			<ref bean="categoryDao"/>
+		</property>
+	</bean>
 	<!-- 注册Action控制器层的动作类对象，并将biz业务逻辑层对象进行注入-->	
 	<bean id="bookAction" class="tjubooks.action.BookAction" abstract="false"
 		scope="prototype" lazy-init="default" autowire="default">
@@ -195,6 +201,22 @@
 		<property name="imageBiz">
 			<ref bean="imageBiz" />
 		</property>
+		<property name="categoryBiz">
+			<ref bean="categoryBiz" />
+		</property>
+	</bean>
+	
+	<bean id="modifyBookAction" class="tjubooks.action.bookAction.ModifyBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+		<property name="imageBiz">
+			<ref bean="imageBiz" />
+		</property>
+		<property name="categoryBiz">
+			<ref bean="categoryBiz" />
+		</property>
 	</bean>
 	
 	<bean id="addRequestBookAction" class="tjubooks.action.bookAction.AddRequestBookAction"
@@ -204,4 +226,55 @@
 		</property>
 	</bean>
 	
+	<bean id="recommendAction" class="tjubooks.action.recommendAction.recommendAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+	<!-- 与用户有关的Action在此注册 -->
+	<!--
+	<bean id="userInfoAction" class="tjubooks.action.userManageAction.UserInfoAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>	
+	-->
+	<bean id="userLoginAction" class="tjubooks.action.userAction.UserLoginAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>
+	
+	<bean id="userRegisterAction" class="tjubooks.action.userAction.UserRegisterAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>
+	
+	<bean id="userLogoutAction" class="tjubooks.action.userAction.UserLogoutAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default"></bean>
+	
+	<bean id="modifyUserInfoAction" class="tjubooks.action.userCenterAction.ModifyUserInfoAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>
+	
+	<bean id="userPasswordAction" class="tjubooks.action.userCenterAction.UserPasswordAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="userBiz">
+			<ref bean="userBiz" />
+		</property>
+	</bean>
+	
+	<!-- 配置拦截器 -->
+	<bean id="authorityInterceptor" class="tjubooks.interceptor.authorityInterceptor"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+	</bean>
 </beans>

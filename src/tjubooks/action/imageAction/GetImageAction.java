@@ -43,12 +43,48 @@ public class GetImageAction extends ActionSupport {
 
 	// 根据图片的id获取图片的信息
 	public String execute() {
+		final int  DefaultImageId = 1;
+		
+		// 如果imageId 属性为空，发送默认图片
 		if(null == imageId){
-			imageId = 1;
+			imageId = DefaultImageId;
 		}
 		Bookimage mybookImage = this.imageBiz.findById(imageId);
-
+		
+		// 如果imageId属性不为空但是不在数据库id范围内（即查找不出结果),也发送id为1的图片
+		if( null == mybookImage){
+			mybookImage =  this.imageBiz.findById(DefaultImageId);
+		}
+		
+		// imageId存在但是不存在对应的图像，发送默认图片
+		if(null == mybookImage.getImage()){
+			mybookImage = this.imageBiz.findById(DefaultImageId);
+		}
+		
 		try{
+			// 得到图片
+			Blob image = mybookImage.getImage();
+			
+			// 将图片写入输入输出流
+			InputStream in = image.getBinaryStream();
+			
+			// 获取应用程序的Response级别
+			HttpServletResponse response = ServletActionContext.getResponse();
+			OutputStream out = response.getOutputStream();
+			response.setContentType("image/jpeg");
+			
+			byte[] buf = new byte[1024];
+			int len;
+			while ((len = in.read(buf)) != -1) {
+				out.write(buf, 0, len);
+			}
+			in.close();
+			out.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+/*		try{
 			// 获取应用程序的Response级别
 			HttpServletResponse response = ServletActionContext.getResponse();
 			
@@ -88,7 +124,7 @@ public class GetImageAction extends ActionSupport {
 			out.close();
 		}catch(Exception e){
 			e.printStackTrace();
-		}
+		}*/
 		return null;
 	}
 }
