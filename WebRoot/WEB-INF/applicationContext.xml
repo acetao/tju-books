@@ -161,6 +161,7 @@
 		</property>
 	</bean>
 	
+	<!--	
     <bean id="userCenterAction" class="tjubooks.action.UserCenterAction" abstract="false"
 		scope="prototype" lazy-init="default" autowire="default">
 		<property name="userBiz">
@@ -170,6 +171,8 @@
 			<ref bean="bookBiz" />
 		</property>
 	</bean>
+
+	-->
 	
 	<!-- 关于书籍的Action在此注册 -->
     <bean id="findBookByIdAction" class="tjubooks.action.bookAction.FindBookByIdAction" abstract="false"
@@ -233,6 +236,14 @@
 		</property>
 	</bean>
 	
+	<bean id="publishBookAction" class="tjubooks.action.bookAction.PublishBookAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+	</bean>
+	
+	<bean id="publishreqBookAction" class="tjubooks.action.bookAction.PublishreqBookAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
+	</bean>
+	
 	<!-- 与用户有关的Action在此注册 -->
 	<!--
 	<bean id="userInfoAction" class="tjubooks.action.userManageAction.UserInfoAction"
@@ -271,6 +282,41 @@
 		<property name="userBiz">
 			<ref bean="userBiz" />
 		</property>
+	</bean>
+	
+	
+	<bean id="userReleasedBookAction" class="tjubooks.action.userCenterAction.UserReleasedBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+	<bean id="userUnlineBookAction" class="tjubooks.action.userCenterAction.UserUnlineBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+	<bean id="userSearchUnlineBookAction" class="tjubooks.action.userCenterAction.UserSearchUnlineBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="bookBiz">
+			<ref bean="bookBiz" />
+		</property>
+	</bean>
+	
+ 	<bean id="userRequestedBookAction" class="tjubooks.action.userCenterAction.UserRequestedBookAction"
+		abstract="false" scope="prototype" lazy-init="default" autowire="default">
+		<property name="requestBookBiz">
+			<ref bean="requestBookBiz" />
+		</property>
+	</bean>
+	 
+	
+	
+	<bean id="userCenterAction" class="tjubooks.action.userCenterAction.UserCenterAction"
+	abstract="false" scope="prototype" lazy-init="default" autowire="default">
 	</bean>
 	
 	<!-- 配置拦截器 -->
