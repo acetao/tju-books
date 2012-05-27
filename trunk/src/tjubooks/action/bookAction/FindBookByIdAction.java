@@ -7,11 +7,11 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class FindBookByIdAction extends ActionSupport {
-	private Integer bookId ;
+	private Integer bookid ;
     private IBookBiz bookBiz;
     
-    public void setBookId(Integer bookId) {
-		this.bookId = bookId;
+    public void setBookid(Integer bookid) {
+		this.bookid = bookid;
 	}
 	public void setBookBiz(IBookBiz bookBiz) {
 		this.bookBiz = bookBiz;
@@ -19,11 +19,10 @@ public class FindBookByIdAction extends ActionSupport {
 	
 	// 查找具体某本书籍并显示
 	public String execute() throws Exception{
-//		System.out.print("Enter Find Book by id");
 		
-		Book myBook = this.bookBiz.findById(bookId);
+		Book myBook = this.bookBiz.findById(bookid);
 		if(null != myBook){
-			ActionContext.getContext().getSession().put("bookDetail", myBook);			
+			ActionContext.getContext().put("bookDetail", myBook);			
 		}
 		else{
 			return "notFound";

@@ -16,3 +16,12 @@
     <br class="clear" />
   </div>
 </div>
+
+<script type="text/javascript">
+function submitForm(myCurrentPage){
+	var currentPage =  document.getElementById("currentPage");
+	currentPage.value = myCurrentPage;
+	var form = document.getElementById("searchForm");
+	form.submit();
+}
+</script>

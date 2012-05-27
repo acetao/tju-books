@@ -40,10 +40,10 @@ request.setAttribute("path",path);
       <div class="holder">
         <h2>瞧瞧书目</h2>
         <ul id="latestnews">
-          <li><a href="#" target="content">公共类书籍</a></li>
-          <li><a href="#" target="content">专业性书籍</a></li>
-          <li><a href="#" target="content">考研考级出国认证考试类</a></li>
-          <li><a href="#" target="content">课外读物类</a></li>
+          <li><a href="${path}/bookOfCategory.action?categoryid=16777216" target="content">公共类书籍</a></li>
+          <li><a href="${path}/bookOfCategory.action?categoryid=33554432" target="content">专业性书籍</a></li>
+          <li><a href="${path}/bookOfCategory.action?categoryid=50331648" target="content">考研考级出国认证考试类</a></li>
+          <li><a href="${path}/bookOfCategory.action?categoryid=67108864" target="content">课外读物类</a></li>
 		  <li><a href="#" target="content">其他书籍</a></li>
         </ul>
       </div>

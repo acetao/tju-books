@@ -13,27 +13,12 @@ import com.opensymphony.xwork2.Preparable;
 
 public class ModifyUserInfoAction extends ActionSupport  {
 	
-	private String college ;
-	private String marjor ;
-	private String grade ;
 	private String email ;
 	private String qq ;
-	private String cellphone ;
+	private String cellphone;
 	
 	
 	private IUserBiz userBiz;
-
-	public void setCollege(String college) {
-		this.college = college;
-	}
-
-	public void setMarjor(String marjor) {
-		this.marjor = marjor;
-	}
-
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -54,11 +39,8 @@ public class ModifyUserInfoAction extends ActionSupport  {
 	public String execute()throws Exception{
 		ActionContext ac = ActionContext.getContext();
 		User user = (User)ac.getSession().get("user");
-		user.setMarjor(marjor);
-		user.setGrade(grade);
 		user.setEmail(email);
 		user.setQq(qq);
-		user.setCollege(college);
 		user.setCellphone(cellphone);
 		userBiz.updateUser(user);
 		

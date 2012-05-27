@@ -40,6 +40,7 @@ public class SearchBookAction extends ActionSupport {
 		System.out.println(pageBean.getTotalPages());
 		
 		ActionContext ac = ActionContext.getContext();
+		
 		//将PageBean 放入Session中
 		//ac.getSession().put("pageBean", pageBean);
 		ac.put("pageBean", pageBean);

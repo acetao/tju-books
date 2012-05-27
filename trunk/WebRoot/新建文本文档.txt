@@ -1,0 +1,94 @@
+<div class="box">
+	<div class="block main_box">
+		<div class="main_body_header">
+            <div class="main_body_title">
+            <span class="span1">个人中心</span>                       
+            </div> 
+        </div>
+        <div id="person_tab" class="book_box">            
+            <div class="Menubox">
+                <ul>
+                   <li id="one0" onclick="setTab(&#39;one&#39;,0,5)" class="tab_hit">个人信息</li>
+                               
+                   <li id="one1" onclick="setTab(&#39;one&#39;,1,5)" class="">修改密码</li>
+                                      <li id="one2" onclick="setTab(&#39;one&#39;,2,5)" class="">当前出售</li>
+                   <li id="one3" onclick="setTab(&#39;one&#39;,3,5)" class="">当前求购</li>
+                                      <li id="one4" onclick="setTab(&#39;one&#39;,4,5)" class="">历史出售</li>
+                   <li id="one5" onclick="setTab(&#39;one&#39;,5,5)" class="">历史求购</li>
+                                   </ul>
+            </div>
+            
+             <div class="Contentbox"> 
+             <span id="tab_name" class="user_info_title">个人信息</span>                       
+             	<a name="page_change_anchor" id="page_change_anchor">&nbsp;</a>        
+               <div id="con_one_0" class="hover" style="display: block; ">
+                <div class="clearfix">
+                  <a href="JavaScript:modifyBaseInfo()" style="text-decoration:none;"><span class="span_button" style="float:right; margin-right:30px;">修改信息</span></a>      
+                </div> 
+                <div id="user_base_info" class="clearfix"><div class="user_info"><ul><li><label class="input-name">用户名：</label><span class="span2">bird</span></li><li><label class="input-name">Email地址：</label><span class="span2">flybirdtian@163.com</span></li><li><label class="input-name">学校：</label><span class="span2">天津大学</span></li><li><label class="input-name">学院：</label><span class="span2">软件学院</span></li><li><label class="input-name">联系电话：</label><span class="span2">13821178532</span></li><li><label class="input-name">QQ：</label><span class="span2">1061903350</span></li></ul></div></div> <div style="height:150px;"> </div> 
+     <div id="modify_user_base_info" class="clearfix modify_info" style="display: none;">
+     	<form onsubmit="return false;">
+                <label class="input-name">  昵称</label><span class="red"><label>*</label></span> <input class="input-text-bg" type="text" id="user_nick" name="user_nick" onblur="checkUserNick()" maxlength="20"> <span class="red"><label id="check_user_nick"></label> </span> <br>
+                 <br>
+                <label class="input-name">  联系电话</label><span class="red" style="visibility:hidden;"><label>*</label></span> <input class="input-text-bg" type="text" id="user_phone" name="user_phone" onblur="checkUserPhone()" maxlength="30"> <span class="red"><label id="check_user_phone"></label></span>  <br>
+                 <br>
+                <label class="input-name">  QQ号码</label><span class="red" style="visibility:hidden;"><label>*</label></span> <input class="input-text-bg" type="text" id="user_qq" name="user_qq" onblur="checkUserQq()" maxlength="12"> <span class="red"><label id="check_user_qq"></label> </span> <br>
+                 <br>
+                 <input class="span_button" style="margin:0px 0px auto 110px;" type="submit" value="提交" onclick="submitUserInfoChange()">   <input class="span_button" type="button" value="返回" onclick="returnToBaseInfoFromCurrentTab()">  <div style="height:40px;"> </div> 
+          </form>
+         </div>               
+                </div>
+               
+              <div id="con_one_1" style="display: none; ">
+            <div id="modify_user_password" class="clearfix modify_info">
+            <form id="modify_pwd_form" onsubmit="return false;">
+                  <label class="input-name"> 当前密码</label><span class="red"><label>*</label></span>  <input class="input-text-bg" type="password" id="old_pwd" name="old_pwd" onblur="checkOldPwd()" maxlength="20"> <span class="red"><label id="check_old_pwd"></label></span>  <br>
+                 <br>
+                  <label class="input-name"> 新 密 码</label><span class="red"><label>*</label></span>  <input class="input-text-bg" type="password" id="new_pwd" name="new_pwd" onblur="checkNewPwd()" maxlength="20"> <span class="red"><label id="check_new_pwd"></label> </span> <br>
+                 <br>
+                  <label class="input-name"> 再次输入新密码</label><span class="red"><label>*</label></span>  <input class="input-text-bg" type="password" id="new_repwd" name="new_repwd" onblur="checkNewRepwd()" maxlength="20"><span class="red"> <label id="check_new_repwd"></label></span>  <br>
+                 <br>
+                  <label class="input-name">  验证码</label><span class="red"><label>*</label></span>  <input class="input-text-code" type="text" id="captcha_code" name="captcha_code" maxlength="4" onblur="checkCode()"> <span class="red"><label id="check_user_checkcode"></label></span>
+             <br>
+             <br>  <span style="margin:20px 10px auto 110px;"> <a href="http://www.2shoushu.com/user_info.php#" onclick="document.getElementById(&#39;captcha&#39;).src = &#39;user_library/securimage/show.checkcode.php?&#39; + Math.random(); return false">
+               <img id="captcha" src="./我的个人中心 - 二手书网-查看个人信息_files/show.checkcode.php" alt="check code">
+             </a> 
+             <a href="http://www.2shoushu.com/user_info.php#" style="margin-bottom:3px;" onclick="document.getElementById(&#39;captcha&#39;).src = &#39;user_library/securimage/show.checkcode.php?&#39; + Math.random(); return false">
+               换一换
+             </a> </span>  <br>
+             <br>
+                 <input class="span_button" style="margin:0px 0px auto 110px;" type="submit" value="提交" onclick="submitUserPwdChange()">   <input class="span_button" type="button" value="返回" onclick="returnToBaseInfoFromOtherTab()">
+                <div style="height:200px;"> </div> 
+               </form>
+                </div>
+               </div>
+               
+               <div id="con_one_2" style="display: none; " class="content_div"> 
+                <div id="now_publish_div" class="clearfix publish_div">暂无信息!</div>
+                <div id="now_publish_page_bar" class="pager" name="now_publish_page_bar"></div><div style="height:200px;"> </div> 
+               </div>
+               
+               <div id="con_one_3" style="display: none; " class="content_div">
+                <div id="now_buy_div" class="clearfix publish_div">
+                </div>
+                <div id="now_buy_page_bar" class="pager" name="now_buy_page_bar">
+                </div><div style="height:200px;"> </div> 
+               </div>
+               
+               <div id="con_one_4" style="display: none; " class="content_div">
+                <div id="history_publish_div" class="clearfix publish_div">
+                </div>
+                <div id="history_publish_page_bar" class="pager" name="history_publish_page_bar">
+                </div><div style="height:200px;"> </div> 
+               </div>
+               
+               <div id="con_one_5" style="display: none; " class="content_div">
+                <div id="history_buy_div" class="clearfix publish_div"> 
+                </div>
+                <div id="history_buy_page_bar" class="pager" name="history_buy_page_bar">
+                </div><div style="height:200px;"> </div> 
+               </div>
+             </div>
+    	</div>
+    </div>
+</div>

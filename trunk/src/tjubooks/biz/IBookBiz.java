@@ -28,4 +28,7 @@ public interface IBookBiz {
 	public abstract PageBean recommendBooks();
 	
 	public abstract PageBean recommendReqBooks();
+	
+	public abstract PageBean searchUnlineBookByUserid(int userid,
+			final int currentPage, final int pageSize);
 }

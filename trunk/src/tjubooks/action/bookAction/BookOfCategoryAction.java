@@ -67,6 +67,7 @@ public class BookOfCategoryAction extends ActionSupport implements ModelDriven<B
 		
 		ActionContext ac = ActionContext.getContext();
 		ac.put("pageBean", pageBean);
+		ac.put("categoryid", categoryid);
 		return SUCCESS;
 		// return "bird"
 	}

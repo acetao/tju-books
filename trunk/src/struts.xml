@@ -29,40 +29,54 @@
 		<!-- 与书籍有关的动作类的注册 -->
 		<!-- 需要的参数:bookid ,放入sesssion里的值为bookDetail book实体类-->
 		<action name="bookDetail" class="findBookByIdAction">
-		  <result type="redirect" name="success">/book/bookDetail.jsp</result>
+		  <result name="success">/bookDetails.jsp</result>
 		  <result name="notFound" >/error.jsp</result>
 		</action>
 		
 		<action name="searchBook" class="searchBookAcion">
-		  <interceptor-ref name="authorityStack"></interceptor-ref>
-		  <result name="success">/index.jsp</result>
+		  <result name="success">/searchResult.jsp</result>
 		</action>
 		
 		<action name="bookOfCategory" class="bookOfCategoryAction">
-			<result>/book/resultBooks.jsp</result>  <!-- 此处需要修改 -->
+			<result>/bookOfCategory.jsp</result>  <!-- 此处需要修改 -->
 		</action>
 		
 		<action name="addBook" class="addBookAction">
+		    <interceptor-ref name="authorityStack"></interceptor-ref>
 			<result>/success.jsp</result>  <!-- 此处需要修改 -->
 		</action>
 		
 		<action name="modifyBook" class="addBookAction">
+		    <interceptor-ref name="authorityStack"></interceptor-ref>
 			<result>/success.jsp</result>  <!-- 此处需要修改 -->
 		</action>
 		
 		<action name="addRequestBook" class="addRequestBookAction">
+		    <interceptor-ref name="authorityStack"></interceptor-ref>
 			<result>/success.jsp</result>  <!-- 此处需要修改 -->
+		</action>
+		
+		<!-- 空的Action，方便拦截器拦截 -->
+		<action name="publishBook" class="publishBookAction">
+		    <interceptor-ref name="authorityStack"></interceptor-ref>
+			<result>/publishBook.jsp</result>  <!-- 此处需要修改 -->
+		</action>		
+		
+	    <!-- 空的Action，方便拦截器拦截 -->
+		<action name="publishreqBook" class="publishreqBookAction">
+		    <interceptor-ref name="authorityStack"></interceptor-ref>
+			<result>/publishreqBook.jsp</result>  <!-- 此处需要修改 -->
 		</action>
 		
 		<action name="recommend" class="recommendAction">
 			<result>/index.jsp</result>  <!-- 此处需要修改，可以不修改 -->
 		</action>
+		
 		<!-- 与用户有关的Action -->
-		<!--
+		<!-- 查看用户信息 -->
 		<action name="userInfo" class="userInfoAction">
 			<result>/userManage/userInfo.jsp</result>  
 		</action>
-		-->
 		
 		<!-- 与用户登录注册相关的操作  -->
 		<action name="user" class="userAction">
@@ -81,31 +95,55 @@
 		</action>
 		
 		<action name="userRegister" class="userRegisterAction">
-		  <result name="registerOk">/indexAfterLogin.jsp</result>
-		  <result name="registerFail">/userManage/register.jsp</result>
+		  <result name="registerOk">/success.jsp</result> <!-- 此处需要修改,写一个注册成功的界面-->
+		  <result name="registerFail">/error.jsp</result>
 		</action>
 		
 		<action name="userLogout" class="userLogoutAction">
+		  <interceptor-ref name="authorityStack"></interceptor-ref>
 		  <result name="goto">/index.jsp</result>
 		</action>
 		
 		<!-- 用户中心  by 迟晓彤-->
 		<action name="modifyUserInfo" class="modifyUserInfoAction">
+		  <interceptor-ref name="authorityStack"></interceptor-ref>
 		  <result name="success">/indexAfterLogin.jsp</result> <!-- 此处需要修改-->
 		</action>
 		<action name="userPassword" class="userPasswordAction">
-		  <result name="changesuccess">/indexAfterLogin.jsp</result>
-		  <result name="changefail">/userCenter/userPassword.jsp</result>
+		  <interceptor-ref name="authorityStack"></interceptor-ref>
+		  <result name="changesuccess">/success.jsp</result>
+		  <result name="changefail">/error.jsp</result>
+		</action>
+		
+		
+		<action name="userReleasedBook" class="userReleasedBookAction">
+		  <result name="searchsuccess">/userCenter.jsp</result>
+		</action>
+		
+		<action name="userRequestedBook" class="userRequestedBookAction">
+		  <result name="searchsuccess">/userCenter.jsp</result>
+		</action>
+		
+		<action name="userUnlineBook" class="userUnlineBookAction">
+		  <result name="unlinesuccess">/userCenter.jsp</result>
+		</action>
+		
+		<action name="userSearchUnlineBook" class="userSearchUnlineBookAction">
+		  <result name="searchsuccess">/userCenter.jsp</result>
 		</action>
 		
 		<!-- 用户中心 -->
+		<!--
 		<action name="userCenter" class="userCenterAction">
 		  <result name="userInfo">/userCenter/userInfo.jsp</result>
 		  <result name="updateOk">/userCenter/userCenter.jsp</result>
 		  <result name="releasedBooks">/userCenter/releasedBooks.jsp</result>
 		</action>
-		
-		
+	  -->
+	  	<action name="userCenter" class="userCenterAction">
+	  	  <interceptor-ref name="authorityStack"></interceptor-ref>
+		  <result name="success">/userCenter.jsp</result>
+		</action>
 	  <!--  处理图片的动作类 -->	
 	  <action name="uploadImage"  class="uploadImageAction">
 	    <param name="maximumSize">4194304</param>  <!-- 设置文件大小小于4M --> 
